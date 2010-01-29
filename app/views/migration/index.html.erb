@@ -1,0 +1,102 @@
+<div class="fieldsets_table" align="center">
+    <fieldset>
+        <legend>
+           <%= I18n.t('migration.index.title')%> 
+        </legend>
+        <% if @fnameArry!=nil&&@fnameArry.size>0 %>
+    <table class="tablesorter" cellspacing="1">
+	<thead>
+            <tr>
+                <th>
+                    <%= I18n.t('migration.index.upload_file_name')%>
+                </th>
+                <th class="icons">
+                    <%= I18n.t('migration.index.action')%>
+                </th>
+            </tr>
+			</thead>
+			<tbody>
+            <% @fnameArry.each do |fname| %>
+            <tr>
+                <td>
+                    <%=fname %>
+                </td>
+                <td class="icons">
+                    <a><%=
+                        link_to_remote(
+                        image_tag('icons/magnifier.png', :alt => 'Show', :title=>"Show"),
+                        :url=> { :controller=>'migration', :action=>'show',:id => fname},
+                        :html => {:name => 'show_migration_data'},
+                        :loading => "Element.show('indicator')",
+                        :complete => "showPopWin('/migration/show', 1000, 700, null, true)",
+                        :update => "sal_data"
+                        ) %></a>
+                    <a><%= link_to image_tag("icons/cross.png", :alt=>"Remove", :title=>"Remove"), {:action => 'delete', :id => fname},:confirm => 'Are you sure?' %></a>
+                </td>
+            </tr>
+            <% end %>
+			</tbody>
+        </table>
+        	<p>
+						<%= will_paginate  @fnameArry, {:class=>'flickr_pagination'}%>
+					</p>  
+        <% else %>
+        <p>
+           <%= I18n.t('migration.index.message')%> 
+        </p>
+        <% end %>
+    </fieldset>
+</div>
+<div class="fieldsets_table2">
+    <fieldset>
+        <legend>
+             <%= I18n.t('migration.index.title1')%>
+        </legend>
+             <div class="data_migrate">
+            <%= form_tag({:action => 'save'},:html=>{:id=>"data_migration_form"}, :multipart => true) %>
+            <p>
+                 <%= I18n.t('migration.index.selector')%> <%= image_tag("icons/Icon_csv.png") %>
+            </p>
+            <%= file_field("file", "file") %>
+            <p>
+                 <%= I18n.t('migration.index.salary_type')%> 
+            </p>
+            <%=select_tag 'type_name', options_for_select(SalaryInfo::SALARY_TYPE) %>
+            <br/>
+            <br/>
+            <br/>
+            <p align="left",class="buttons">
+                <%= submit_tag I18n.t('migration.index.button'), :class => "button", :onclick=>"beginUpload();" %>
+            </p>
+        </div>      
+		<div id="uploadprogressbar">
+			</div>
+        <br/>
+    </fieldset>
+</div>
+
+<script type=text/javascript>
+    jQuery(document).ready(function(){
+        jQuery("#uploadprogressbar").progressBar({
+			barImage: 'images/progressbg_orange.gif',
+			height: 15
+		});
+    });
+    var pct=0;
+    var handle=0;
+    
+    function beginUpload(){
+		//sis_showPopWin();
+        jQuery("#uploadprogressbar").fadeIn();
+        handle = setInterval("update_s()", 100);
+		this.value="stop";
+    }
+	
+	function update_s(){
+		jQuery("#uploadprogressbar").progressBar(++pct);
+            if(pct==100){                                                //设定总长度值
+                clearInterval(handle);
+                pct=0;
+            }			
+	}
+</script>

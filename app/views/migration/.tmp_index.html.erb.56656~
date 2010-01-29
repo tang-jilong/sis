@@ -1,0 +1,64 @@
+<div class="fieldsets_table">
+    <fieldset>
+        <legend>
+            List Of Imported Data
+        </legend>
+   		 <% if @fnameArry!=nil&&@fnameArry.size>0 %>
+		 <table class="list">
+			<tr>
+				<th>
+					Uploaded File Name
+				</th>
+				<th class="icons">
+					Action
+				</th>
+			</tr>
+			<% @fnameArry.each do |fname|%>
+			<tr>
+				<td>
+					<%=fname%>
+				</td>
+				<td class="icons">
+					<a><%= link_to image_tag("icons/magnifier.png", :alt=>"Show", :title=>"Show"), {:action => "show", :id => fname}%></a>
+					 <a><%= link_to image_tag("icons/cross.png", :alt=>"Remove", :title=>"Remove"), {:action => 'delete', :id => fname},:confirm => 'Are you sure?'%></a>
+				</td>
+			</tr>
+			<% end %>		 	
+		</table>
+		<% else %>
+		 <p>
+            No Uplaoded File 
+        </p>
+        <% end %>
+    </fieldset>
+</div>
+<div class="fieldsets_table2">
+    <fieldset>
+        <legend>
+            Data Migration 
+        </legend>
+        <div class="data_migrate">
+            <%= form_tag({:action => 'save'}, :multipart => true) %>
+            <p>
+                Select File <%= image_tag("icons/icon_csv.gif")%>
+            </p>
+            <%= file_field("file", "file") %>
+			<p>
+				Salary Type 
+			</p>
+			<%=select_tag 'type_name', options_for_select(SalaryInfo::SALARY_TYPE) %>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<br/>
+			<p align="left",class="buttons">
+            <%= submit_tag "Upload file", :class => "button" %>
+			</p>
+        </div>
+		<br/>
+    </fieldset>
+</div>

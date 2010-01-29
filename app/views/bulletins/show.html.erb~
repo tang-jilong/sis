@@ -1,0 +1,26 @@
+<div class="fieldsets_table0">
+    <fieldset>
+        <legend>
+            <%= I18n.t('bulletins.show.title')%>
+        </legend>
+        <p>
+            <b><%= I18n.t('bulletins.show.name')%>:</b>
+            <%=h @bulletin.title%>
+        </p>
+        <p>
+            <b><%= I18n.t('bulletins.show.issue_date')%>:</b>
+            <%=h @bulletin.issue_date.strftime("%Y-%m-%d") %>
+        </p>
+        <p>
+            <b><%= I18n.t('bulletins.show.issue_date')%>:</b>
+            <%= @bulletin.content%>
+        </p>
+        <p>
+            <b><%= I18n.t('bulletins.show.author')%>:</b>
+            <%=h @bulletin.autor%>
+        </p>
+		<p class="buttons">
+			<%= link_to 'Cancel', bulletins_path , :class=>"button"%>
+		</p>
+    </fieldset>
+</div>

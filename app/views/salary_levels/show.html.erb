@@ -1,0 +1,13 @@
+<p>
+  <b><%= I18n.t('salary_levels.show.name')%>:</b>
+  <%=h @salary_level.name ,:readonly=>true %>
+</p>
+
+<p>
+  <b><%= I18n.t('salary_levels.show.remark')%>:</b>
+  <%=h @salary_level.remark, :readonly=>true %>
+</p>
+
+
+<%= link_to I18n.t('salary_levels.show.button1'), edit_salary_level_path(@salary_level) %> |
+<%= link_to I18n.t('salary_levels.show.button2'), salary_levels_path %>

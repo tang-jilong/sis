@@ -1,0 +1,29 @@
+<div class="fieldsets" id="boc_login">
+    <% form_tag do %>
+    <fieldset>
+        <legend>
+            Please Log In
+        </legend>
+		<% if flash[:notice] -%>
+				<div id="notice" class='error'><%= flash[:notice] %></div>
+		<% end -%>
+		<br/>
+        <p>
+            <label for="name">
+                Name
+            </label>
+            <%= text_field_tag :name, params[:name] %>
+        </p>
+		
+        <p>
+            <label for="password">
+                Password
+            </label>
+            <%= password_field_tag :password, params[:password] %>
+        </p>
+        <p class="buttons">
+            <%= submit_tag "Login", :class=>"button"%>
+        </p>
+    </fieldset>
+    <% end %>
+</div>

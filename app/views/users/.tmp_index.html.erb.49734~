@@ -1,0 +1,191 @@
+<div class="fieldsets_table">
+	 <fieldset>
+        <legend>
+            <%= I18n.t('users.index.title')%>
+        </legend>
+	<% if @users.empty? %><%= I18n.t('users.index.message')%><% else %>
+	<table class="tablesorter" cellspacing="1">
+	<thead>
+    <tr>
+        <th>
+            <%= I18n.t('users.index.user_name')%>
+        </th>
+        <th>
+            <%= I18n.t('users.index.role_name')%>
+        </th>
+		<th>
+            <%= I18n.t('users.index.department_name')%>
+        </th>
+		<th>
+            <%= I18n.t('users.index.hr_id')%>
+        </th>
+		<th>
+            <%= I18n.t('users.index.work_id')%>
+        </th>
+		<th>
+			<%= I18n.t('users.index.salary_level')%>
+		</th>	
+		<th>
+           <%= I18n.t('users.index.salary_point')%>
+        </th>
+		<th>
+            <%= I18n.t('users.index.grade_assess_level')%>
+        </th>
+        <th class="icons">
+           <%= I18n.t('users.index.action')%>
+        </th>
+    </tr>
+	</thead>
+	<tbody>
+    <% @users.each do |user| %>
+    <tr>
+        <td>
+            <%= user.name %>
+        </td>
+		<td>
+           <%= user.role.role_name%>
+        </td>
+		<td>
+           <%= user.department.dept_name%>
+        </td>
+		<td>
+           <%= user.hr_id%>
+        </td>
+		<td>
+           <%= user.work_id%>
+        </td>
+		<td>
+		   <%= user.salary_level.name%>
+		</td>	
+		<td>
+           <%= user.salary_point%>
+        </td>
+		<td>
+           <%= user.grade_assess_level%>
+        </td>
+        <td class="icons">
+            <a><%= link_to image_tag("icons/magnifier.png", :alt=>"Show", :title=>"Show"), {:action => 'show', :id => user} %></a>
+            <a><%= link_to image_tag("icons/pencil.png", :alt=>"Edit", :title=>"Edit"), {:action => 'edit', :id => user}%></a>
+            <a><%= link_to image_tag("icons/cross.png", :alt=>"Remove", :title=>"Remove"), {:action => 'delete', :id => user},:confirm => 'Are you sure?'%></a>
+        </td>
+    </tr>
+    <% end %>
+	</tbody>
+</table>
+<div>
+	<p>
+	<%= will_paginate @users, {:class=>'flickr_pagination'}%>
+	</p>  
+</div>
+<% end %>	
+</fieldset>
+</div>
+
+
+<div class="fieldsets_table2">
+	<% form_for :user, :url => { :action => :create } do |f| %>
+	 <fieldset>
+        <legend>
+             <%= I18n.t('users.index.title1')%>
+        </legend>
+			<%= f.error_messages %>
+		<table>			
+		  <tr><td>
+		    <%= f.label I18n.t('users.index.name') %>
+			</td>
+			<td>	
+		    <%= f.text_field :name %>
+		  </td></tr>
+		  <tr><td>
+		    <%= f.label I18n.t('users.index.password') %>
+			</td>
+			<td>
+		    <%= f.password_field :password %>
+		  </td></tr>
+		   <tr><td>
+  			 <%= f.label I18n.t('users.index.password_confirmation') %>
+			 </td>
+			<td>
+   			 <%= f.password_field :password_confirmation %>
+ 		   </td></tr>
+		   <tr><td>
+  			 <%= f.label I18n.t('users.index.email') %>
+			 </td>
+			<td>
+   			 <%= f.text_field :email %>
+ 		   </td></tr>
+		    <tr><td>
+  			 <%= f.label I18n.t('users.index.birthday') %>
+			  <td>
+   			  <input class="wdate" type="text" name="birthday" onclick="SelectDate(this,'yyyy-MM-dd')" value=<%=@birthday%>>
+ 		   </td>
+		   		   <tr><td>
+       		<%= f.label I18n.t('users.index.role_name') %>
+			</td>
+			<td>
+        	 <%= f.select :role_id,
+				@roleItmes, 
+				:prompt=>I18n.t('application.selection')%>
+   		   </td></tr> 
+		  
+		    <tr><td>
+       		 <%= f.label I18n.t('users.index.department_name') %>
+			 </td>
+			<td>
+        	 <%= f.select :department_id,
+				@deptItems, 
+				:prompt=>I18n.t('application.selection')%>
+   		   </td></tr> 
+		   	<tr><td>
+		   	<%= f.label I18n.t('users.index.salary_level') %>
+			</td>
+			<td>
+			 <%= f.select :salary_level_id,
+				@sal_lItems, 
+				:prompt=>I18n.t('application.selection')%>
+			</td></tr>
+		    <tr><td>
+       		 <%= f.label I18n.t('users.index.salary_point') %>
+			 </td>
+			<td>
+        	 <%= f.select :salary_point,
+				User::SALARY_POINT, 
+				:prompt=>I18n.t('application.selection')%>
+   		   </td></tr> 
+		   <tr><td>
+       		 <%= f.label I18n.t('users.index.grade_assess_level') %>
+			 </td>
+			<td>
+        	 <%= f.select :grade_assess_level,
+				User::GRADE_ASSESS_LEVEL, 
+				:prompt=>I18n.t('application.selection')%>
+   		   </td></tr> 
+		   <tr><td>
+		    <%= f.label I18n.t('users.index.hr_id') %>
+			</td>
+			<td>
+		    <%= f.text_field :hr_id %>
+		  </td></tr>
+		   <tr><td>
+		    <%= f.label I18n.t('users.index.work_id') %>
+			</td>
+			<td>
+		    <%= f.text_field :work_id %>
+		  </td></tr>
+		    <tr><td>
+		    <%= f.label I18n.t('users.index.remark') %>
+			</td>
+			<td>
+		    <%= f.text_area :remark %>
+		  </td></tr>
+		  <tr>
+		  	<td>
+		  	</td>
+			<td class="buttons">
+				<%= f.submit I18n.t('users.index.button'), :class => "button" %>	
+			</td>			
+		  </tr>
+		  </table>
+		<% end %>
+	</fieldset>
+</div>

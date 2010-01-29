@@ -1,0 +1,40 @@
+<div class="fieldsets_table0">
+    <fieldset>
+        <legend>
+            <%= I18n.t('menu.index.title')%>
+        </legend>
+	<% if @bulletins!=nil&&@bulletins.size>0%>
+	<table class="tablesorter" cellspacing="1">
+	<thead>
+	  <tr>
+	  	<th><%= I18n.t('menu.index.name')%></th>
+	  	<th><%= I18n.t('menu.index.issue_name')%></th>
+	    <th><%= I18n.t('menu.index.autor')%></th>
+		 <th><%= I18n.t('menu.index.action')%></th>
+	  </tr>
+	</thead>
+	<tbody>
+	<% @bulletins.each do |bulletin| %>
+	  <tr>
+	  	<td><%= link_to bulletin.title, {:controller=>'menu',:action => 'show', :id => bulletin }%></td>
+	  	<td><%=h bulletin.issue_date.strftime("%Y-%m-%d")  %></td>
+	    <td><%=h bulletin.autor %></td>
+		<td><%= link_to image_tag("icons/magnifier.png", :alt=>"Show", :title=>"Show"), {:controller=>'menu',:action => 'show', :id => bulletin }%>
+	  </td>
+	  </tr>
+	<% end %>
+	</tbody>
+	</table>
+	<div>
+	<p>
+		<%= will_paginate @bulletins, {:class=>'flickr_pagination'}%>
+	</p>  
+	</div>
+	<% else %>
+		<%= I18n.t('menu.index.message')%>
+	<% end%>
+	</fieldset>
+</div>		 
+<br />
+
+

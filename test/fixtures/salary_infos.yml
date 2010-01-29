@@ -1,0 +1,17 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  name: MyString
+  issue_date: 2008-12-29 10:19:40
+  column_name: MyText
+  data_info: MyText
+  excel_name: MyString
+  type_name: MyString
+
+two:
+  name: MyString
+  issue_date: 2008-12-29 10:19:40
+  column_name: MyText
+  data_info: MyText
+  excel_name: MyString
+  type_name: MyString

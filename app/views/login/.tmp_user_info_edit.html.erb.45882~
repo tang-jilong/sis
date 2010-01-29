@@ -1,0 +1,70 @@
+<div class="fieldsets_table2">
+	<% form_for (@user) do |f| %>
+		  <%= f.error_messages %>
+	 <fieldset>
+        <legend>
+             <%= I18n.t('users.edit.title')%>  
+        </legend>
+		  <p>
+		     <%= f.label I18n.t('users.edit.name') %>
+		    <%= f.text_field :name %>
+		  </p>
+		  <p>
+		    <%= f.label I18n.t('users.edit.password') %>
+		    <%= f.password_field :password %>
+		  </p>
+		   <p>
+  			 <%= f.label I18n.t('users.edit.password_confirmation') %>
+   			 <%= f.password_field :password_confirmation %>
+ 		   </p>
+		   <p>
+  			 <%= f.label I18n.t('users.edit.email') %>
+   			 <%= f.text_field :email %>
+ 		   </p>
+		    <p>
+  			 <%= f.label I18n.t('users.edit.birthday') %>
+   			  <input class="wdate" type="text" name="birthday" onclick="SelectDate(this,'yyyy-MM-dd')" value=<%=@birthday%>>
+ 		   </p>
+		   <p>
+       		 <%= f.label I18n.t('users.index.role_name') %>
+        	 <%= f.select :role_id, 
+				@roleItmes, 
+				:prompt=>I18n.t('application.selection')%>
+   		   </p> 
+		    <p>
+       		  <%= f.label I18n.t('users.index.department_name')%>
+        	 <%= f.select :department_id,
+				@deptItems, 
+				:prompt=>I18n.t('application.selection')%>
+   		   </p> 
+		    <p>
+       		 <%= f.label  I18n.t('users.index.salary_point') %>
+        	 <%= f.select :salary_point,
+				User::SALARY_POINT, 
+				:prompt=>I18n.t('application.selection')%>
+   		   </p> 
+		   <p>
+       		 <%= f.label I18n.t('users.index.grade_assess_level') %>
+        	 <%= f.select :grade_assess_level,
+				User::GRADE_ASSESS_LEVEL, 
+				:prompt=>I18n.t('application.selection')%>
+   		   </p> 
+		   <p>
+		    <%= f.label I18n.t('users.index.hr_id')%>
+		    <%= f.text_field :hr_id, :readonly=>true %>
+		  </p>
+		   <p>
+		    <%= f.label  I18n.t('users.index.work_id')%>
+		    <%= f.text_field :work_id,:readonly=>true %>
+		  </p>
+		    <p>
+		     <%= f.label I18n.t('users.index.remark')%>
+		    <%= f.text_area :remark %>
+		  </p>
+		  <p class="buttons">
+		    <%= f.submit 'Update', :controller=>"login",:action=>"update",:class => "button" %>
+			or <%= link_to 'Cancel', :controller=>"login", :action=> "index" %>
+		  </p>
+		<% end %>
+	</fieldset>
+</div>

@@ -1,0 +1,30 @@
+<div class="fieldsets_table0" id="others_detail_info">
+    <fieldset>
+        <legend>
+            <%= I18n.t('filter.temp.d_title') %>
+        </legend>
+        <table class="tablesorter_temp" cellspacing="1">
+            <thead>
+            	<tr>
+            	<% @others_detail.column_name.split("|").each do |head| %>
+            	<th>
+            		<%= head%>
+            	</th>
+				<% end%>
+				</tr>
+            </thead>
+            <tbody>
+                <tr>
+                	<% @others_detail.data_info.split("|").each do |item| %>
+                    <td>
+                        <%=h item %>
+                    </td>
+					<% end %>					
+                </tr>
+            </tbody>
+        </table>
+        <p class="buttons" align="center">
+            <a href="#" onclick="window.top.hidePopWin();return false;" class="button"><%= I18n.t('comparator.addto.button') %></a>
+        </p>
+    </fieldset>
+</div>

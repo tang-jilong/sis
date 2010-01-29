@@ -1,0 +1,69 @@
+<div class="fieldsets_table2" id="sal_field">
+    <fieldset>
+        <legend>
+            Comparator
+        </legend>
+		
+<%= form_remote_tag(
+        :url=> { :controller=>'comparator', :action=>'add_to_comparator_ajax'},
+        :html => {:name => 'add_user_form'},
+        :loading => "Element.show('indicator')",
+        :complete => "showPopWin('/comparator/add_to_comparator_ajax', 800, 500, null, true)",
+        :failure => 'alert("action exe failure!")'
+        ) %>
+
+<% if @cuser_arry.empty? %>No Comparable users <% else %>
+	<table  class="list">
+    <tr>
+        <th>
+            User Name
+        </th>
+		<th>
+            Department Name
+        </th>
+
+        <th class="icons">
+            Action
+        </th>
+    </tr>
+    <% @cuser_arry.each do |user| %>
+    <tr>
+        <td>
+            <%= user.name %>
+        </td>
+		<td>
+           <%= user.dept_id%>
+        </td>
+
+        <td class="icons">
+			 <a><%=
+		        link_to_remote(
+		        image_tag('icons/cross.png', :alt => 'Delete User',:title=>"Delete User"),
+				:url => {
+                        :controller => "comparator",
+                        :action => "delete_cuser",
+                        :id => user},
+				:complete => "window.location.reload();",
+                :update => "sal_field"
+		        ) %>
+			</a>
+        </td>
+    </tr>
+    <% end %>
+</table>
+        <% end %>
+		<br/>
+		<br/>
+	 	<p>
+        <label>From Date</label> 
+		<input class="wdate" type="text" name="fDate" onclick="SelectDate(this,'yyyy-MM-dd')" value=<%=@fDate%>>
+        </p>
+		 <p>
+        <label>End Date</label> 
+		<input class="wdate" type="text" name="eDate" onclick="SelectDate(this,'yyyy-MM-dd')" value=<%=@eDate%>>
+        </p>
+		<p align="center">
+		<input type="submit" class="button" value="Comparator" />
+		</p>
+    </fieldset>
+</div>

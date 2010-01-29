@@ -1,0 +1,122 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>BOC Salary Inquery System</title>
+        <!-- START:stylesheet -->
+		<%= javascript_include_tag 'jquery-1.3.2.min','jquery.progressbar','jquery.validate','jquery.tablesorter' %>
+		<script type="text/javascript">
+		if (window.navigator.userAgent.indexOf("MSIE")>=1)
+　　{
+　 　setActiveStyleSheet_ie();
+　　}else{
+　　if (window.navigator.userAgent.indexOf("Firefox")>=1)
+　　{
+　 　setActiveStyleSheet_fx();
+　　}else{
+      　setActiveStyleSheet_fx();
+　　}
+　　}
+　　
+　　function setActiveStyleSheet_fx() {
+    	 if(window.screen.width==1400){
+					document.write("<link href='/stylesheets/layout_1400_fx.css' media='all' rel='stylesheet' type='text/css' />");    
+				 document.write("<link href='/stylesheets/sis_1400_fx.css' media='all' rel='stylesheet' type='text/css' />");  
+		 		 document.write("<link href='/stylesheets/reset_1400_fx.css' media='all' rel='stylesheet' type='text/css' />");  
+			 }  
+		}  
+		
+		function setActiveStyleSheet_ie() {
+    	 if(window.screen.width==1400){
+					document.write("<link href='/stylesheets/layout_1400_ie.css' media='all' rel='stylesheet' type='text/css' />");    
+				 document.write("<link href='/stylesheets/sis_1400_ie.css' media='all' rel='stylesheet' type='text/css' />");  
+		 		 document.write("<link href='/stylesheets/reset_1400_ie.css' media='all' rel='stylesheet' type='text/css' />");  
+			 }  
+			 if(window.screen.width==1024){  
+		document.write("<link href='/stylesheets/layout_1024_ie.css' media='all' rel='stylesheet' type='text/css' />");    
+				 document.write("<link href='/stylesheets/sis_1024_ie.css' media='all' rel='stylesheet' type='text/css' />");  
+		 		 document.write("<link href='/stylesheets/reset_1024_ie.css' media='all' rel='stylesheet' type='text/css' />");  
+			 }  
+		}
+		
+			   
+			var jQuery=$;
+			jQuery(document).ready(function() { 
+			    // extend the default setting to always include the zebra widget. 
+			    jQuery.tablesorter.defaults.widgets = ['zebra']; 
+			    // extend the default setting to always sort on the first column 
+			    jQuery.tablesorter.defaults.sortList = [[0,0]]; 
+			    // call the tablesorter plugin 
+			    jQuery("table").tablesorter();
+				//.tablesorterPager({container: jQuery("#pager")});
+				
+			}); 
+      </script> 
+        <%= javascript_include_tag :defaults,'WebCalendar','subModal','fckeditor/fckeditor','sis' %>
+        <!-- END:stylesheet -->
+    </head>
+
+    <body>
+        <div id="banner">
+        	<div>
+        		<dl id="userinfo">
+    				<%= render(:partial => "login/session_info.html.erb" ) %>
+				</dl>
+			</div>
+			<div id="i18n">
+	            <!-- START:i18n -->
+				<dd>
+				<ul>
+				<li><%= I18n.t('layouts.menu.language')%></li>
+				<li>
+	            <% form_tag '', :method => 'GET' do %>
+					<%= select_tag 'locale', options_for_select(LANGUAGES, I18n.locale),:onchange => 'this.form.submit()' %>
+		            <%= javascript_tag "$$('.locale input').each(Element.hide)" %>
+	            <% end %>
+				</li>
+				</ul>
+				</dd>
+	            <!-- END:i18n -->
+			</div>	
+			<div class="sis_title">
+			<%= I18n.t('layouts.menu.title') %>
+			</div>
+			<dl id="userinfo_detail">
+			<% if session[:user_id] %>
+					<%= render(:partial => "login/user_info.html.erb" , :object => @user) %>
+			<% end %>
+			</dl> 
+        </div>
+		<div>
+			<% if session[:user_id] %>
+				<%= render(:partial => "menu/top_menu.html.erb" , :object => @menu) %>
+			<% end %>
+		</div>	
+		<div>
+		<% if session[:user_id] %>
+			<% hidden_div_if(@menu.sidemenu.empty?, :id =>"sidemenu") do %>
+				<%= render(:partial => "menu/side_menu.html.erb" , :object => @menu) %>
+			<% end %>
+		<% end %>
+		</div>	
+		<% if session[:user_id] %>
+			<div id="content">
+			<% if flash[:notice] -%>
+				<div id="notice"><%= flash[:notice] %></div>
+			<% end -%>
+	        	<%= yield :layout %>
+			</div>
+		<% else %>	
+			<div id="login_content" class="wrapper clearfix">
+				<%= yield :layout %>
+			</div>
+		<% end %>
+		
+		<div class="footer">
+			<p><%= I18n.t('layouts.menu.copyright')%>
+			<%= image_tag("boc_logo.gif", :size => "96x24")%>
+			</p>
+		</div>
+    </body>
+</html>
+     

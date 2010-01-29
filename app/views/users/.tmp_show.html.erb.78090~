@@ -1,0 +1,58 @@
+<div class="fieldsets_table2">
+	<% form_for (@user) do |f| %>
+		  <%= f.error_messages %>
+	 <fieldset>
+        <legend>
+             <%= I18n.t('users.show.title')%> 
+        </legend>
+		  <p>
+		    <%= f.label I18n.t('users.show.name') %>
+		    <%= f.text_field :name,:readonly=>true  %>
+		  </p>
+		   <p>
+  			 <%= f.label I18n.t('users.show.email') %>
+   			 <%= f.text_field :email,:readonly=>true  %>
+ 		   </p>
+		    <p>
+  			 <%= f.label I18n.t('users.show.birthday') %>
+   			  <%= f.text_field :birthday, :readonly=>true %>
+ 		   </p>
+		   <p>
+       		 <%= f.label I18n.t('users.index.role_name') %>
+			  <input  readonly=true type="text" value=<%= @user.role.role_name%>  >
+   		   </p> 
+		    <p>
+       		 <%= f.label I18n.t('users.index.department_name')%>
+        	  <input  readonly=true type="text" value=<%= @user.department.dept_name%>  >
+   		   </p> 
+		   <p>
+		   	<%= f.label I18n.t('users.index.salary_level')%>
+			  <input  readonly=true type="text" value=<%= @user.salary_level.name%>  >
+			</p>
+		    <p>
+       		 <%= f.label I18n.t('users.index.salary_point')%>
+        	 <%= f.text_field :salary_point,:readonly=>true %>
+   		   </p> 
+		   <p>
+       		 <%= f.label I18n.t('users.index.grade_assess_level')%>
+        	 <%= f.text_field :grade_assess_level,:readonly=>true %>
+   		   </p> 
+		   <p>
+		    <%= f.label I18n.t('users.index.hr_id') %>
+		    <%= f.text_field :hr_id ,:readonly=>true%>
+		  </p>
+		   <p>
+		    <%= f.label I18n.t('users.index.work_id')%>
+		    <%= f.text_field :work_id ,:readonly=>true%>
+		  </p>
+		    <p>
+		    <%= f.label I18n.t('users.index.remark') %>
+		    <%= f.text_area :remark,:readonly=>true %>
+		  </p>
+		  <p class="buttons">
+		    <%= f.submit I18n.t('users.show.button'),  :action=>'index', :class => "button" %>
+		  </p>
+		<% end %>
+	</fieldset>
+</div>
+

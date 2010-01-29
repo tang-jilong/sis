@@ -1,0 +1,68 @@
+<div class="fieldsets_table">
+    <fieldset>
+        <legend>
+            List Of Salary Data
+        </legend>
+        <% if @salary_arry!=nil&&@salary_arry.size>0 %>
+		<table class="list">
+		    <tr>
+		        <% @headers.each do |title| %>
+		        <th>
+		            <%= title %>
+		        </th>
+		        <% end %>
+		    </tr>
+		    <% @salary_arry.each do |item| %>
+		    <tr>
+		        <% item.data_info.split("|").each do |data| %>
+		        <td>
+		            <%= data %>
+		        </td>
+		        <% end %>
+		    </tr>
+		    <% end %>
+		</table>
+		<div>
+			<p>
+			<%= will_paginate @salary_arry%>  
+			</p>
+			<p class="icons" align="center">
+				<a><%= link_to image_tag("icons/download_icon.png", :alt=>"Download", :title=>"Download"), {:action => 'generate_excel'}%></a>
+			</p>	
+		</div>
+		<% else %>
+		 <p>
+            No Salary Data Showing 
+        </p>
+        <% end %>
+    </fieldset>
+</div>
+
+<div class="fieldsets_table2">
+    <fieldset>
+        <legend>
+            Filter 
+        </legend>
+		 <%= error_messages_for :bonus %>
+		 	<% form_for :bonus, :url => {:action => :search_bonus },:html=>{:id=>"bonus_filter_form"} do |f| %>
+			<%= f.error_messages %>
+            <p>
+                <%= f.label :fDate, 'From Date' %> 
+				<input class="wdate" type="text" name="fDate" onclick="SelectDate(this,'yyyy-MM-dd')" value=<%= :fDate%>>
+            </p>
+			 <p>
+                <%= f.label :eDate, 'End Date' %> 
+				<input class="wdate" type="text" name="eDate" onclick="SelectDate(this,'yyyy-MM-dd')" value=<%= :eDate%>>
+            </p>
+			<p>
+				<%= f.label :type_name, 'Salary Type' %>
+				 <%= f.select :type_name,
+							  SalaryInfo::SALARY_TYPE, 
+						      :prompt=>"select please!"%>
+			</p>
+			<p class="buttons">
+            <%= f.submit "Search" ,:class => "button" %>
+			</p>
+			<% end %>
+    </fieldset>
+</div>

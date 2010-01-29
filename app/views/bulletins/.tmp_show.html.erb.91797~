@@ -1,0 +1,26 @@
+<div class="fieldsets_table0">
+    <fieldset>
+        <legend>
+            Showing Bulletin
+        </legend>
+        <p>
+            <b>Title:</b>
+            <%=h @bulletin.title,:readonly=>true %>
+        </p>
+        <p>
+            <b>Issue date:</b>
+            <%=h @bulletin.issue_date,:readonly=>true %>
+        </p>
+        <p>
+            <b>Content:</b>
+            <%= @bulletin.content,:readonly=>true %>
+        </p>
+        <p>
+            <b>Autor:</b>
+            <%=h @bulletin.autor,:readonly=>true %>
+        </p>
+		<p class="buttons">
+			<%= link_to 'Cancel', bulletins_path , :class=>"button"%>
+		</p>
+    </fieldset>
+</div>

@@ -1,0 +1,22 @@
+<div class="fieldsets_table2" id="edit_salary_level">
+    <% form_for(@salary_level) do |f| %>
+    <fieldset>
+        <legend>
+            <%= I18n.t('salary_levels.edit.title')%> 
+        </legend>
+		 <%= f.error_messages %>
+        <p>
+            <%= f.label I18n.t('salary_levels.edit.name') %>
+            <%= f.text_field :name %>
+        </p>
+        <p>
+            <%= f.label I18n.t('salary_levels.edit.remark') %>
+            <%= f.text_area :remark %>
+        </p>
+		 <p class="buttons">
+		    <%= f.submit I18n.t('salary_levels.edit.button1'), :class => "button" %>
+			or <%= link_to I18n.t('salary_levels.edit.button2'), salary_levels_path %>
+		  </p>
+	      <% end %>	  
+    </fieldset>
+</div>

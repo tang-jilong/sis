@@ -1,0 +1,69 @@
+<div class="fieldsets_table">
+	 <fieldset>
+        <legend>
+            Listing Salary Levels
+        </legend>
+			<% if @salary_levels.empty? %>No Salary Levels found.<% else %>
+	 <table class="tablesorter" cellspacing="1">
+	<thead>
+    <tr>
+        <th>
+             Name
+        </th>
+        <th>
+            Remark
+        </th>
+        <th class="icons">
+            Action
+        </th>
+    </tr>
+	</thead>
+	<tbody>
+    <% @salary_levels.each do |sal_l| %>
+    <tr>
+        <td>
+            <%= sal_l.name %>
+        </td>
+		<td>
+            <% if sal_l.remark==nil?%>
+			N/A
+			<% else %>
+			<%= sal_l.remark%>	
+			<% end %>		
+        </td>
+        <td class="icons">
+		    <a><%= link_to image_tag("icons/pencil.png", :alt=>"Edit", :title=>"Edit"), edit_salary_level_path(sal_l) %></a>
+		    <a><%= link_to image_tag("icons/cross.png", :alt=>"Remove", :title=>"Remove"), sal_l, :confirm => 'Are you sure?', :method => :delete %></a>
+        </td>
+    </tr>
+    <% end %>
+	</tbody>
+</table>
+<% end %>		
+</fieldset>
+</div>
+
+
+<div class="fieldsets_table2">
+<% form_for(@salary_level) do |f| %>
+ 
+	 <fieldset>
+        <legend>
+             New Salary Level 
+        </legend>
+		 <%= f.error_messages %>
+  <p>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= f.label :remark %>
+    <%= f.text_area :remark %>
+  </p>
+  <p  class="buttons">
+    <%= f.submit 'Create' ,:class => "button"%>
+  </p>
+  </fieldset>
+<% end %>
+
+</div>

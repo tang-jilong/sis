@@ -1,0 +1,23 @@
+<div class="fieldsets_table2">
+	<% form_for (@role) do |f| %>
+		  
+	 <fieldset>
+        <legend>
+             <%= I18n.t('roles.edit.title')%> 
+        </legend>
+		<%= f.error_messages %>
+		  <p>
+		    <%= f.label I18n.t('roles.edit.role_name')%>
+		    <%= f.text_field :role_name %>
+		  </p>
+		  <p>
+		    <%= f.label I18n.t('roles.edit.role_name')%>
+		    <%= f.text_area :remark %>
+		  </p>
+		  <p class="buttons">
+		    <%= f.submit I18n.t('roles.edit.button1'), :class => "button" %>
+			or <%= link_to I18n.t('roles.edit.button2'), roles_path %>
+		  </p>
+		<% end %>
+	</fieldset>
+</div>

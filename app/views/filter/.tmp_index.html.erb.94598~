@@ -1,0 +1,63 @@
+<div class="fieldsets_table">
+    <fieldset>
+        <legend>
+            List Of Salary Data
+        </legend>
+        <% if @salary_arry!=nil&&@salary_arry.size>0 %>
+		<table class="list">
+		    <tr>
+		        <% @headers.each do |title| %>
+		        <th>
+		            <%= title %>
+		        </th>
+		        <% end %>
+		    </tr>
+		    <% @salary_arry.each do |item| %>
+		    <tr>
+		        <% item.data_info.split("|").each do |data| %>
+		        <td>
+		            <%= data %>
+		        </td>
+		        <% end %>
+		    </tr>
+		    <% end %>
+		</table>
+		<div>
+			<p>
+			<%= will_paginate @salary_arry%>  
+			</p>
+			<p class="icons" align="center">
+				<a><%= link_to image_tag("icons/download_icon.png", :alt=>"Download", :title=>"Download"), {:action => 'generate_csv'}%></a>
+			</p>	
+		</div>
+		<% else %>
+		 <p>
+            No Salary Data Showing 
+        </p>
+        <% end %>
+    </fieldset>
+</div>
+
+<div class="fieldsets_table2">
+    <fieldset>
+        <legend>
+            Filter 
+        </legend>
+            <%= form_tag({:action => 'index'}) %>
+            <p>
+                <label>From Date</label> 
+				<input class="wdate" type="text" name="fDate" onclick="SelectDate(this,'yyyy-MM-dd')" value=<%=@fDate%>>
+            </p>
+			 <p>
+                <label>End Date</label> 
+				<input class="wdate" type="text" name="eDate" onclick="SelectDate(this,'yyyy-MM-dd')" value=<%=@eDate%>>
+            </p>
+			<p>
+				<label>Salary Type</label>
+				<%=select_tag 'type_name', options_for_select(SalaryInfo::SALARY_TYPE) %> 
+			</p>
+			<p class="buttons">
+            <%= submit_tag "Search" ,:class => "button" %>
+			</p>
+    </fieldset>
+</div>

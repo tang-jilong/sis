@@ -1,0 +1,5 @@
+<div align="center">
+<h1>Welcome To BOC Salary Inquery System</h1>
+It's <%= Time.now %>
+</div>
+

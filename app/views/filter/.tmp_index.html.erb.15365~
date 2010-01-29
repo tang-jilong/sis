@@ -1,0 +1,166 @@
+<div class="fieldsets_table">
+    <fieldset>
+        <legend>
+            <%= I18n.t('filter.index.title')%> 
+        </legend>
+        <% if @salary_arry!=nil&&@salary_arry.size>0 %>
+		 <table class="tablesorter" cellspacing="1">
+            <thead>
+		  <tr>
+		    	<th>
+		        	<%= I18n.t('filter.temp.date')%>
+		        </th>
+				<th>
+		        	<%= I18n.t('filter.temp.item')%>
+		        </th>
+				  <th>
+		        	<%= I18n.t('filter.temp.total_num')%>
+		        </th>
+				  <th>
+		        	<%= I18n.t('filter.temp.final_num')%>
+		        </th>
+				  <th>
+		        	<%= I18n.t('filter.temp.operation')%>
+		        </th>
+		    </tr>
+			</thead>
+			<tbody>
+		    <% @salary_arry.each do |item| %>
+		     <tr>
+		    	<% arry=item.data_info.split("|") %>
+		        <td>
+		            <%= arry[0] %>
+		        </td>
+				<td>
+					<%= link_to_remote arry[1], 
+					:url=> {:controller=>'filter',:action => 'show_bonus_detail', :id => item },
+					:html => {:name => 'show_bonus_detail'},
+		            :loading => "Element.show('indicator')",
+		            :complete => "showPopWin('/filter/show_bonus_detail', 800, 200, null, true)",
+		            :update => "bouns_detail_info"	
+					%>
+		        </td>
+				<td>
+		            <%= arry[3] %>
+		        </td>
+				<td>
+		            <%= arry[4] %>
+		        </td>
+				<td>
+					<%= link_to_remote image_tag('icons/magnifier.png', :alt => 'Show', :title=>"Show"), 
+					:url=> {:controller=>'filter',:action => 'show_bonus_detail', :id => item },
+					:html => {:name => 'show_show_bonus_detail'},
+		            :loading => "Element.show('indicator')",
+		            :complete => "showPopWin('/filter/show_bonus_detail', 800, 200, null, true)",
+		            :update => "bouns_detail_info"	
+					%>
+		        </td>
+		    </tr>
+		    <% end %>
+			</tbody>
+		</table>
+		<div>
+			<p>
+			<%= will_paginate @salary_arry, {:class=>'flickr_pagination'}%>  
+			</p>
+			<table class="tablesorter" cellspacing="1">
+			<thead>
+				<tr>
+					<th>
+						<%= I18n.t('filter.index.fDate')%> 
+					</th>
+						<th>
+						<%= I18n.t('filter.index.eDate')%> 
+					</th>
+					<th>
+						<%= I18n.t('filter.temp.total_num1')%> 
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<%= @bonus.fDate%>
+					</td>
+					<td>
+						<%= @bonus.eDate%>
+					</td>
+					<td>
+						<%= @total_num%>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+			<p class="icons" align="center">
+				<a><%= link_to image_tag("icons/download_icon.png", :alt=>"Download", :title=>"Download"), {:action => 'generate_bonus_excel'}%></a>
+			</p>	
+		</div>
+		<% else %>
+		 <p>
+            <%= I18n.t('filter.index.message')%>  
+        </p>
+        <% end %>
+    </fieldset>
+</div>
+
+<div class="fieldsets_table2">
+    <fieldset>
+        <legend>
+            <%= I18n.t('filter.index.title1')%> 
+        </legend>
+		 	<% form_for :bonus,@bonus,:url => {:action => :index },:html=>{:id=>"bonus_filter_form"} do |f| %>
+			<%= f.error_messages %>
+			<table>
+            <tr><td>
+                <%= f.label :fDate ,I18n.t('filter.index.fDate') %> 
+				</td>
+				<td>
+				<%= f.text_field :fDate, :html=>{:id=>"fDate", :name=>"fDate"},:onclick=>"SelectDate(this,'yyyy-MM-dd')", :class=>"wdate"%>
+            </td>
+			</tr>
+			 <tr>
+			 	<td>
+                <%= f.label :eDate, I18n.t('filter.index.eDate') %> 
+				</td>
+				<td>
+				<%= f.text_field :eDate, :html=>{:id=>"eDate", :name=>"eDate"},:onclick=>"SelectDate(this,'yyyy-MM-dd')", :class=>"wdate"%>
+            	</td>
+			</tr>
+			<tr>
+				<%= f.hidden_field :type_name%>	
+			</tr>
+			<!--
+			<tr>
+				<td>
+				<%= f.label :type_name, I18n.t('filter.index.sType') %>
+				</td>
+				<td>
+				 <%= f.select :type_name,
+							  SalaryInfo::SALARY_TYPE, 
+						      :prompt=>I18n.t('application.selection')%>
+			</td>
+			</tr>
+			-->
+			<tr>
+				<td>
+					<%= f.label :dept_check, I18n.t('filter.index.d_range') %> 	
+				</td>
+				<td>
+					 <%=f.check_box :dept_check, :disabled =>@dept_flag%>
+				</td>
+			</tr>
+				<tr>
+				<td>
+					<%= f.label :bank_check, I18n.t('filter.index.b_range') %> 	
+				</td>
+				<td>
+					 <%= f.check_box :bank_check, :disabled =>@bank_flag%>
+				</td>
+			</tr>
+			</table>
+			<p class="buttons">
+            <%= f.submit I18n.t('filter.index.button') ,:class => "button" %>
+			</p>
+			<% end %>
+    </fieldset>
+</div>

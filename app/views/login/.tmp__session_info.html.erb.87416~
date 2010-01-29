@@ -1,0 +1,9 @@
+<% if session[:user_id] %>
+  <dd>
+    <ul>
+    	<li><%= I18n.t('login.session.content')%>, <%= h session[:user_name] %>  |</li>
+      <li><%= link_to I18n.t('login.session.preference'), :controller=>'login', :action=>"user_info_edit"%>  |</li>
+      <li><%= link_to image_tag("exit.png", :size => "18x18", :alt=>"Exit", :title=>"Exit"),:controller => 'login', :action=>"logout" %></li>
+    </ul>
+  </dd>
+<% end %>

@@ -1,0 +1,80 @@
+<div class="fieldsets_table">
+    <fieldset>
+        <legend>
+            List Of Salary Data
+        </legend>
+        <% if @salary_arry!=nil&&@salary_arry.size>0 %>
+		 <table class="tablesorter" cellspacing="1">
+            <thead>
+		    <tr>
+		        <% @headers.each do |title| %>
+		        <th>
+		            <%= title %>
+		        </th>
+		        <% end %>
+		    </tr>
+			</thead>
+			<tbody>
+		    <% @salary_arry.each do |item| %>
+		    <tr>
+		        <% item.data_info.split("|").each do |data| %>
+		        <td>
+		            <%= data %>
+		        </td>
+		        <% end %>
+		    </tr>
+		    <% end %>
+			</tbody>
+		</table>
+		<div>
+			<p>
+			<%= will_paginate @salary_arry, {:class=>'flickr_pagination'}%>  
+			</p>
+			<p class="icons" align="center">
+				<a><%= link_to image_tag("icons/download_icon.png", :alt=>"Download", :title=>"Download"), {:action => 'generate_excel'}%></a>
+			</p>	
+		</div>
+		<% else %>
+		 <p>
+            No Salary Data Showing 
+        </p>
+        <% end %>
+    </fieldset>
+</div>
+
+<div class="fieldsets_table2">
+    <fieldset>
+        <legend>
+            Filter 
+        </legend>
+		 	<% form_for :bonus,@bonus,:url => {:action => :index },:html=>{:id=>"bonus_filter_form"} do |f| %>
+			<%= f.error_messages %>
+			<table>
+            <tr><td>
+                <%= f.label :fDate, 'From Date' %> 
+				</td>
+				<td>
+				<%= f.text_field :fDate, :html=>{:id=>"fDate", :name=>"fDate"},:onclick=>"SelectDate(this,'yyyy-MM-dd')", :class=>"wdate"%>
+            </td>
+			</tr>
+			 <tr><td>
+                <%= f.label :eDate, 'End Date' %> 
+				</td>
+				<td>
+				<%= f.text_field :eDate, :html=>{:id=>"eDate", :name=>"eDate"},:onclick=>"SelectDate(this,'yyyy-MM-dd')", :class=>"wdate"%>
+            </td></tr>
+			<tr><td>
+				<%= f.label :type_name, 'Salary Type' %>
+				</td>
+				<td>
+				 <%= f.select :type_name,
+							  SalaryInfo::SALARY_TYPE, 
+						      :prompt=>"select please!"%>
+			</td></tr>
+			</table>
+			<p class="buttons">
+            <%= f.submit "Search" ,:class => "button" %>
+			</p>
+			<% end %>
+    </fieldset>
+</div>

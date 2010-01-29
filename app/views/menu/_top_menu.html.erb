@@ -1,0 +1,13 @@
+<div id="tabs2">
+    <% if session[:user_id] %>
+	 <ul>
+	<% for tmenu in @menu.topmenu %>
+        <li>
+            <% link_to({:controller => "menu", :action => "find_side_menu", :id => tmenu}) do %>
+				<span><%= I18n.t(tmenu.name)%></span>
+			<% end %>
+        </li>
+	 <% end %>
+	  </ul>
+    <% end %>
+</div>

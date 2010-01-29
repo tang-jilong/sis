@@ -1,0 +1,71 @@
+<div class="fieldsets_table" id="users_field">
+	 <fieldset>
+        <legend>
+            List Of Users
+        </legend>
+	<% if @users.empty? %>No users found.<% else %>
+	<table  class="list">
+    <tr>
+        <th>
+            User Name
+        </th>
+		<th>
+            Department Name
+        </th>
+		<th>
+            HR ID
+        </th>
+		<th>
+            Work ID
+        </th>
+		<th>
+            Salary Point
+        </th>
+		<th>
+            Grade Assess Level
+        </th>
+        <th class="icons">
+            Action
+        </th>
+    </tr>
+    <% @users.each do |user| %>
+    <tr>
+        <td>
+            <%= user.name %>
+        </td>
+		<td>
+           <%= user.department.dept_name%>
+        </td>
+		<td>
+           <%= user.hr_id%>
+        </td>
+		<td>
+           <%= user.work_id%>
+        </td>
+		<td>
+           <%= user.salary_point%>
+        </td>
+		<td>
+           <%= user.grade_assess_level%>
+        </td>
+        <td class="icons">
+			 <a><%=
+		        link_to_remote(
+		        image_tag('icons/add.png', :alt => 'Add User'),
+				:url => {
+                        :controller => "comparator",
+                        :action => "add_cuser",
+                        :id => user},
+				:complete => "window.location.reload();",
+                :update => "sal_field"
+		        ) %>
+			</a>
+        </td>
+    </tr>
+    <% end %>
+</table>
+<% end %>		
+</fieldset>
+</div>
+ <%= render :partial => "comparator/add_cuser" %>
+

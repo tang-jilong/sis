@@ -1,0 +1,70 @@
+gem install fastercsv
+
+enviroment.rb:  config.gem "fastercsv", :lib => "faster_csv"
+
+iconv: put charset.dll icov.dll to windows/system32 folder
+       put icov.so to ruby/..
+
+spreadsheet-0.6.4.1
+
+
+fckeditor: 
+
+in the file app/controllers/fckeditor_controller.rb
+look for
+uploaded = request.relative_url_root.to_s+"#{UPLOADED}/#{params[:Type]}"
+
+replace it with this
+uploaded =
+ActionController::Base.relative_url_root.to_s+"#{UPLOADED}/#{params[:Type]}"
+
+similarly in the file lib/fckeditor.rb
+replace
+js_path = "#{request.relative_url_root}/javascripts"
+with
+js_path = "#{ActionController::Base.relative_url_root}/javascripts"
+       
+       
+       
+CSV 倒数第5列是应发合计 最后一列是实发合计
+删除department/role/salary_leve中的记录时 相应关联到到的user数据都回删除。
+####Action Mailer Config #############
+gem install openrain-action_mailer_tls -s http://gems.github.com
+
+1. Add the following entry to config/environment.rb
+   config.gem "openrain-action_mailer_tls", :lib => "smtp_tls.rb", :source => "http://gems.github.com"
+
+由migration迁移支持的类型是： :binary，:boolean，:date，:datetime，:float，:integer，:string，:text，:time，和:timestamp。
+
+
+############安装 RMagick############################
+gruff 安装  gem install gruff
+
+gem install rmagick-1.13.0-win32.gem
+
+然后再点ImageMagick-6.2.9-3-Q8-windows-dll.exe安装，并且把这个的安装路径放到path环境变量里面去，否则Ruby Rmagick安装时会出现CORE_RL_magick_.dll找不到的错误。
+打开下载安装vcredist_x86.exe，重启服务器，rmagick在windows应该可以正常工作了
+###################################################
+
+++++++++++++++++++++++prototype & jquery confilct+++++++++++++++++++++++++++
+在页面中同时存在jquery和prototype，当用到$的时候，难免产生冲突，所以一定要区分开来：
+
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript">
+   j= $;
+</script>
+<script type="text/javascript" src="prototype.js" ></script>
+
+这样做了以后，在用到jquery的地方用j来替代$符号，而prototype的$函数照常使用
+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+
+
+
+
+
+
+

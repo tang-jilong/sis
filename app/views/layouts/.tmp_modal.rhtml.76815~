@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>BOC Salary Inquery System</title>
+        <%= stylesheet_link_tag "master","reset","tables","sis","forms","layout","subModal", :media => "all" %><!-- <label id="code.slt"/> -->
+        <%= javascript_include_tag 'jquery-1.3.2.min','jquery.progressbar','jquery.validate' %>
+		<script type="text/javascript"> 
+			var jQuery=$;
+		
+      </script> 
+        <%= javascript_include_tag :defaults,'WebCalendar','subModal','fckeditor/fckeditor','sis' %>
+        <style type="text/css">
+            body {
+                background-image: none;
+                background-color: #fff;
+                padding: 10px;
+                width: auto;
+            }
+        </style>
+    </head>
+    <body scrolling="no">
+        <%= yield %>
+    </body>
+</html>

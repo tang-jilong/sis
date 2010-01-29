@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  dept_name: MyString
+  remark: MyText
+
+two:
+  dept_name: MyString
+  remark: MyText

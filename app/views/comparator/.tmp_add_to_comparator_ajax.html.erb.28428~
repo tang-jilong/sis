@@ -1,0 +1,74 @@
+<div class="fieldsets_table">
+    <fieldset>
+        <legend>
+            <%= I18n.t('comparator.addto.title')%> 
+        </legend>
+        <% if @comparable_arry.empty? %><%= I18n.t('comparator.addto.message')%><% else %>
+        <table class="list">
+            <tr>
+                <th>
+                    <%= I18n.t('comparator.addto.username')%> 
+                </th>
+				 <th>
+                   <%= I18n.t('comparator.addto.total_salary')%> 
+                </th>
+                <th>
+                    <%= I18n.t('comparator.addto.total_bonus')%>
+                </th>
+                <th>
+                    <%= I18n.t('comparator.addto.total_festival_fee')%>
+                </th>
+                <th>
+                    <%= I18n.t('comparator.addto.total_others')%>
+                </th>
+                <th>
+                    <%= I18n.t('comparator.addto.final_salary')%>
+                </th>
+                <th>
+                   <%= I18n.t('comparator.addto.final_bonus')%>
+                </th>
+                <th>
+                    <%= I18n.t('comparator.addto.final_festival_fee')%>
+                </th>
+                <th>
+                    <%= I18n.t('comparator.addto.final_others')%>
+                </th>
+            </tr>
+            <% @comparable_arry.each do |user| %>
+            <tr>
+                <td>
+                    <%= user.sal_name %>
+                </td>
+				<td>
+                    <%= user.t_salary %>
+                </td>
+                <td>
+                    <%= user.t_bonus %>
+                </td>
+                <td>
+                    <%= user.t_festival_fee %>
+                </td>
+                <td>
+                    <%= user.t_others %>
+                </td>
+                <td>
+                    <%= user.salary %>
+                </td>
+                <td>
+                    <%= user.bonus %>
+                </td>
+                <td>
+                    <%= user.festival_fee %>
+                </td>
+                <td>
+                    <%= user.others %>
+                </td>
+            </tr>
+            <% end %>
+        </table>
+        <% end %>
+    </fieldset>
+	     <p class="buttons" align="center">
+            <a href="#" onclick="window.top.hidePopWin();return false;"  class="button"><%= I18n.t('comparator.addto.button')%></a>
+        </p>
+</div>

@@ -1,0 +1,533 @@
+/* for I18n Localization */
+.locale {
+    float: right;
+    padding-left: 5px;
+}
+
+.sis_title {
+    padding-top: 10px;
+    width: 60%;
+    float: right;
+}
+
+/* Styles for main page */
+.log-out {
+    text-align: right;
+    font: bold 14px / 14px "Times New Roman", serif;
+    margin-right: 40px;
+}
+
+/* user information, preferences / logout */
+#userinfo {
+    margin-right: 25px;
+    margin-top: 0px;
+    position: relative;
+    float: right;
+    font-size: 12px;
+    color: #80b2e2;
+    width: 18%;
+}
+
+#userinfo dd {
+    float: right;
+}
+
+#userinfo dd li {
+    float: left;
+    margin-right: 5px;
+}
+
+#userinfo a {
+    color: #c1e1ff;
+}
+
+#userinfo a:hover {
+    color: #fff;
+}
+
+/* user information, preferences / detail */
+#userinfo_detail {
+    margin-right: 25px;
+    margin-top: 60px;
+    position: relative;
+    float: right;
+    font-size: 13px;
+    color: #c1e1ff;
+    width: 50%;
+}
+
+#userinfo_detail dd {
+    float: right;
+}
+
+#userinfo_detail dd li {
+    float: left;
+    margin-right: 5px;
+}
+
+#userinfo_detail a {
+    color: #c1e1ff;
+}
+
+#userinfo_detail a:hover {
+    color: #fff;
+}
+
+#i18n {
+    position: absolute;
+    padding-top: 1.3em;
+    right: 0;
+    top: 10px;
+    margin-right: 25px;
+    margin-top: 15px;
+    font-size: 12px;
+    color: #80b2e2;
+    width: 12%;
+}
+
+#i18n dd {
+    float: right;
+}
+
+#i18n dd li {
+    float: left;
+    margin-right: 8px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+#banner {
+    background: url(/images/header.png) 0 0 repeat-x;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: 0px solid;
+    border-left: 1px solid #083056;
+    border-right: 1px solid #083056;
+    font: small-caps 40px / 40px "Times New Roman", serif;
+    color: #fff;
+    height: 121px;
+    vertical-align: middle;
+    text-align: center;
+    width: 100%;
+}
+
+/* for web calendar css */
+.wdate {
+    background: url("../images/calendar_month.png") bottom right no-repeat;
+    margin-bottom: 3px;
+}
+
+#errorExplanation {
+    width: 330px;
+    border: 2px solid red;
+    padding: 7px;
+    padding-bottom: 7px;
+    margin-bottom: 10px;
+    background-color: #f0f0f0;
+}
+
+#errorExplanation h2 {
+    display: none;
+    text-align: center;
+    font-weight: bold;
+    padding: 5px 5px 5px 5px;
+    font-size: 12px;
+    margin: -7px;
+    background-color: #c00;
+    color: #fff;
+}
+
+#errorExplanation p {
+    text-align: left;
+    font-size: 13px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0;
+    padding: 5px;
+    padding-top: 0px;
+    background-color: #7ec638;
+}
+
+#errorExplanation ul {
+    font: bold 13px / 13px 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, sans-serif;
+    text-align: left;
+    padding-left: 15px;
+}
+
+#errorExplanation ul li {
+    color: #c00;
+    font-weight: 400;
+    font-size: 12px;
+    list-style: square;
+}
+
+/* START:notice */
+#notice {
+    border: 2px solid #996600;
+    padding: 1em;
+    margin-bottom: 2em;
+    background-color: #f0f0f0;
+    font: bold smaller 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, sans-serif;
+}
+
+login_notice {
+    border: 2px solid #996600;
+    padding: 1em;
+    margin-bottom: 2em;
+    background-color: #f0f0f0;
+    font: bold smaller 'Lucida Grande', 'Lucida Sans Unicode', Helvetica, Arial, sans-serif;
+}
+
+/* END:notice */
+/*- Menu Tabs 2--------------------------- */
+#tabs2 {
+    float: left;
+    width: 100%;
+    font-size: 93%;
+    line-height: normal;
+    border-bottom: 1px solid #84776B;
+    height: 52px;
+}
+
+#tabs2 ul {
+    margin: 0;
+    padding: 10px 10px 0 300px;
+    list-style: none;
+}
+
+#tabs2 li {
+    display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+#tabs2 a {
+	display: inline;
+    float: left;
+    background: url("/images/tableft2.gif") no-repeat left top;
+    margin-left: 6px;
+    padding: 0 0 0 4px;
+    text-decoration: none;
+    height: 42px;
+}
+
+#tabs2 a span {
+    float: left;
+    display: inline;
+    background:  url("/images/tabright2.gif") no-repeat  right top;
+    padding: 0px 25px 4px 20px;
+    color: #84776B;
+    height: 1px;
+}
+
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#tabs2 a span {
+    float: none;
+    cursor: pointer;
+}
+
+/* End IE5-Mac hack */
+#tabs2 a:hover span {
+    color: #74675B;
+}
+
+#tabs2 a:hover {
+    background-position: 0% -42px;
+}
+
+#tabs2 a:hover span {
+    background-position: 100% -42px;
+}
+
+/*- Menu Tabs 2--------------------------- */
+#tabs3 {
+    float: left;
+    width: 100%;
+    font-size: 83%;
+    line-height: normal;
+    border-bottom: 1px solid #84776B;
+    height: 42px;
+}
+
+#tabs3 ul {
+    margin: 0;
+    padding: 10px 10px 0 350px;
+    list-style: none;
+}
+
+#tabs3 li {
+	display: inline;
+    margin: 0;
+    padding: 0;
+}
+
+#tabs3 a {
+    float: left;
+	display: inline;
+    background: url("/images/tableft2.gif") no-repeat left top;
+    margin: 0;
+    padding: 0 0 0 4px;
+    text-decoration: none;
+    height: 32px;
+}
+
+#tabs3 a span {
+    float: left;
+    display: inline;
+    background: url("/images/tabright2.gif") no-repeat right top;
+    padding: 13px 15px 4px 15px;
+    color: #84776B;
+    height: 15px;
+}
+
+/* Commented Backslash Hack hides rule from IE5-Mac \*/
+#tabs3 a span {
+    float: none;
+    cursor: pointer;
+}
+
+/* End IE5-Mac hack */
+#tabs3 a:hover span {
+    color: #74675B;
+}
+
+#tabs3 a:hover {
+    background-position: 0% -42px;
+}
+
+#tabs3 a:hover span {
+    background-position: 100% -42px;
+}
+
+/* Pagination Stylesheet */
+.digg_pagination {
+    background: white;
+    /* self-clearing method: */
+}
+
+.digg_pagination a, .digg_pagination span {
+    padding: .2em .5em;
+    display: block;
+    float: left;
+    margin-right: 1px;
+}
+
+.digg_pagination span.disabled {
+    color: #999;
+    border: 1px solid #DDD;
+}
+
+.digg_pagination span.current {
+    font-weight: bold;
+    background: #2E6AB1;
+    color: white;
+    border: 1px solid #2E6AB1;
+}
+
+.digg_pagination a {
+    text-decoration: none;
+    color: #105CB6;
+    border: 1px solid #9AAFE5;
+}
+
+.digg_pagination a:hover, .digg_pagination a:focus {
+    color: #003;
+    border-color: #003;
+}
+
+.digg_pagination .page_info {
+    background: #2E6AB1;
+    color: white;
+    padding: .4em .6em;
+    width: 22em;
+    margin-bottom: .3em;
+    text-align: center;
+}
+
+.digg_pagination .page_info b {
+    color: #003;
+    background: #6aa6ed;
+    padding: .1em .25em;
+}
+
+.digg_pagination:after {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+* html .digg_pagination {
+    height: 1%;
+}
+*:first-child + html .digg_pagination {
+    overflow: hidden;
+}
+
+.apple_pagination {
+    background: #F1F1F1;
+    border: 1px solid #E5E5E5;
+    text-align: center;
+    padding: 1em;
+}
+
+.apple_pagination a, .apple_pagination span {
+    padding: .2em .3em;
+}
+
+.apple_pagination span.disabled {
+    color: #AAA;
+}
+
+.apple_pagination span.current {
+    font-weight: bold;
+    background: transparent url(/images/apple-circle.gif) no-repeat 50% 50%;
+}
+
+.apple_pagination a {
+    text-decoration: none;
+    color: black;
+}
+
+.apple_pagination a:hover, .apple_pagination a:focus {
+    text-decoration: underline;
+}
+
+.flickr_pagination {
+    text-align: center;
+    padding: .3em;
+}
+
+.flickr_pagination a, .flickr_pagination span {
+    padding: .2em .5em;
+}
+
+.flickr_pagination span.disabled {
+    color: #AAA;
+}
+
+.flickr_pagination span.current {
+    font-weight: bold;
+    color: #FF0084;
+}
+
+.flickr_pagination a {
+    border: 1px solid #DDDDDD;
+    color: #0063DC;
+    text-decoration: none;
+}
+
+.flickr_pagination a:hover, .flickr_pagination a:focus {
+    border-color: #003366;
+    background: #0063DC;
+    color: white;
+}
+
+.flickr_pagination .page_info {
+    color: #aaa;
+    padding-top: .8em;
+}
+
+.flickr_pagination .prev_page, .flickr_pagination .next_page {
+    border-width: 2px;
+}
+
+.flickr_pagination .prev_page {
+    margin-right: 1em;
+}
+
+.flickr_pagination .next_page {
+    margin-left: 1em;
+}
+
+
+/**
+ * POPUP MSAK STYLES
+ */
+#popupMask {
+	position: absolute;
+	z-index: 900;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	opacity: .5;
+	filter: alpha(opacity=50);
+	/* this hack is so it works in IE
+	 * I find setting the color in the css gives me more flexibility 
+	 * than the PNG solution.
+	 */
+	background-color: #333333;
+	display:none;
+}
+#s_popupMask {
+	position: absolute;
+	z-index: 900;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	height: 100%;
+	opacity: .5;
+	filter: alpha(opacity=50);
+	/* this hack is so it works in IE
+	 * I find setting the color in the css gives me more flexibility 
+	 * than the PNG solution.
+	 */
+	background-color: #333333;
+	display:none;
+}
+#popupContainer {
+	position: absolute;
+	z-index: 901;
+	top: 0px;
+	left: 0px;
+	display:none;
+	padding: 0px;
+}
+#s_popupContainer {
+	position: absolute;
+	z-index: 901;
+	top: 0px;
+	left: 0px;
+	display:none;
+	padding: 0px;
+}
+#popupInner {
+	border: 2px solid #000000;
+	background-color: #ffffff;
+}
+
+#popupFrame {
+	margin: 0px;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	z-index: 202;
+}
+#popupTitleBar {
+	background-color: #522E6B;
+	color: #ffffff;
+	font-weight: bold;
+	height: 1.3em;
+	padding: 5px;
+	border-bottom: 2px solid #000000;
+	border-top: 1px solid #A266CC;
+	border-left: 1px solid #A266CC;
+	border-right: 1px solid #36005B;
+	position: relative;
+	z-index: 203;
+}
+#popupTitle {
+	float:left;
+	font-size: 1.1em;
+}
+
+#popupControls {
+	position: absolute;
+	top: 5px;
+	right: 5px;
+	z-index: 999;
+	cursor: pointer;
+	cursor: hand;
+}
+

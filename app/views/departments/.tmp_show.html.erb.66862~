@@ -1,0 +1,21 @@
+<div class="fieldsets_table2">
+	<% form_for (@department) do |f| %>
+		  <%= f.error_messages %>
+	 <fieldset>
+        <legend>
+             Showing Department 
+        </legend>
+		  <p>
+		    <%= f.label :dept_name %>
+		    <%= f.text_field :dept_name %>
+		  </p>
+		  <p>
+		    <%= f.label :remark %>
+		    <%= f.text_area :remark %>
+		  </p>
+		  <p class="buttons">
+			<%= f.submit 'Cancel', :action=>'index', :class => "button" %>
+			</p>
+		<% end %>
+	</fieldset>
+</div>

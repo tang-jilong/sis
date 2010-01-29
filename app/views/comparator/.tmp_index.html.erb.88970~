@@ -1,0 +1,80 @@
+<div class="fieldsets_table" id="users_field">
+	 <fieldset>
+        <legend>
+            <%= I18n.t('comparator.index.title')%> 
+        </legend>
+	<% if @users.empty? %><%= I18n.t('comparator.index.message')%> <% else %>
+	<table class="tablesorter" cellspacing="1">
+	<thead>
+    <tr>
+        <th>
+            <%= I18n.t('comparator.index.username')%>
+        </th>
+		<th>
+            <%= I18n.t('comparator.index.deptment_name')%>
+        </th>
+		<th>
+            <%= I18n.t('comparator.index.hr_id')%>
+        </th>
+		<th>
+            <%= I18n.t('comparator.index.work_id')%>
+        </th>
+		<th>
+            <%= I18n.t('comparator.index.salary_point')%>
+        </th>
+		<th>
+             <%= I18n.t('comparator.index.grade_assess_level')%>
+        </th>
+        <th class="icons">
+            <%= I18n.t('comparator.index.action')%>
+        </th>
+    </tr>
+	</thead>
+	<tbody>
+    <% @users.each do |user| %>
+    <tr>
+        <td>
+            <%= user.name %>
+        </td>
+		<td>
+           <%= user.department.dept_name%>
+        </td>
+		<td>
+           <%= user.hr_id%>
+        </td>
+		<td>
+           <%= user.work_id%>
+        </td>
+		<td>
+           <%= user.salary_point%>
+        </td>
+		<td>
+           <%= user.grade_assess_level%>
+        </td>
+        <td class="icons">
+			 <a><%=
+		        link_to_remote(
+		        image_tag('icons/add.png', :alt => 'Add User'),
+				:url => {
+                        :controller => "comparator",
+                        :action => "add_cuser",
+                        :id => user},
+				:complete => "window.location.reload();",
+                :update => "sal_field"
+		        ) %>
+			</a>
+        </td>
+    </tr>
+    <% end %>
+	</tbody>
+</table>
+<% end %>	
+<div>
+	<p>
+	<%= will_paginate @users, {:class=>'flickr_pagination'}%>
+	</p>  
+</div>	
+</fieldset>
+</div>
+ <%= render :partial => "comparator/add_cuser" %>
+

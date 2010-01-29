@@ -1,0 +1,26 @@
+<div class="fieldsets_table0">
+    <fieldset>
+        <legend>
+           <%= I18n.t('menu.show.title')%> 
+        </legend>
+        <p>
+            <b><%= I18n.t('menu.show.name')%>:</b>
+            <%=h @bulletin.title %>
+        </p>
+        <p>
+            <b><%= I18n.t('menu.show.issue_date')%>:</b>
+            <%=h @bulletin.issue_date %>
+        </p>
+        <p>
+            <b><%= I18n.t('menu.show.content')%>:</b>
+            <%= @bulletin.content %>
+        </p>
+        <p>
+            <b><%= I18n.t('menu.show.autor')%>:</b>
+            <%=h @bulletin.autor %>
+        </p>
+		<p class="buttons">
+			<%= link_to I18n.t('menu.show.button'), :action=>'index' , :class=>"button"%>
+		</p>
+    </fieldset>
+</div>

@@ -1,0 +1,64 @@
+<div class="fieldsets_table">
+	 <fieldset>
+        <legend>
+            List Of Departments
+        </legend>
+			<% if @departments.empty? %>No roles found.<% else %>
+	<table  class="list">
+    <tr>
+        <th>
+            Dept name
+        </th>
+        <th>
+            Remark
+        </th>
+        <th class="icons">
+            Action
+        </th>
+    </tr>
+    <% @departments.each do |department|%>
+    <tr>
+        <td>
+            <%= department.dept_name %>
+        </td>
+		<td>
+            <% if department.remark==nil?%>
+			N/A
+			<% else %>
+			<%= department.remark%>	
+			<% end %>		
+        </td>
+        <td class="icons">
+            <a><%= link_to image_tag("icons/magnifier.png", :alt=>"Show", :title=>"Show"), {:action => 'show', :id => department} %></a>
+            <a><%= link_to image_tag("icons/pencil.png", :alt=>"Edit", :title=>"Edit"), {:action => 'edit', :id => department}%></a>
+            <a><%= link_to image_tag("icons/cross.png", :alt=>"Remove", :title=>"Remove"), {:action => 'delete', :id => department},:confirm => 'Are you sure?'%></a>
+        </td>
+    </tr>
+    <% end %>
+</table>
+<% end %>		
+</fieldset>
+</div>
+
+<div class="fieldsets_table2">
+	<% form_for :department, :url => { :action => :create } do |f| %>
+		 
+	 <fieldset>
+        <legend>
+             Create Department 
+        </legend>
+		 <%= f.error_messages %>
+		  <p>
+		    <%= f.label :dept_name %>
+		    <%= f.text_field :dept_name %>
+		  </p>
+		  <p>
+		    <%= f.label :remark %>
+		    <%= f.text_area :remark %>
+		  </p>
+		  <p class="buttons">
+		    <%= f.submit 'Create', :class => "button" %>
+		  </p>
+		<% end %>
+	</fieldset>
+</div>

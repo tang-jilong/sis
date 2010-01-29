@@ -1,0 +1,109 @@
+<div class="fieldsets_table0">
+    <fieldset>
+        <legend>
+            <%= I18n.t('dept_summary.index.title')%> 
+        </legend>
+            <% form_for :salary,:url => {:action => :search_dept_summary },:html=>{:id=>"dept_summary_form"} do |f| %>
+			<table>
+            <tr><td>
+                <%= f.label :fDate, I18n.t('dept_summary.index.fDate')%> 
+				</td>
+				<td>
+				<%= f.text_field :fDate, :html=>{:id=>"fDate", :name=>"fDate"},:onclick=>"SelectDate(this,'yyyy-MM-dd')", :class=>"wdate"%>
+            </td>
+			<td>
+                <%= f.label :eDate, I18n.t('dept_summary.index.eDate')%> 
+				</td>
+				<td>
+				<%= f.text_field :eDate, :html=>{:id=>"eDate", :name=>"eDate"},:onclick=>"SelectDate(this,'yyyy-MM-dd')", :class=>"wdate"%>
+            </td>
+			<td class="buttons">
+	            <%= f.submit I18n.t('application.button.search'), :class=>"button"%>
+			</td>
+			</tr>
+			</table>
+			<% end %>
+    </fieldset>
+</div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<div class="fieldsets_table0">
+    <fieldset>
+        <legend>
+             <%= I18n.t('dept_summary.index.title1')%> 
+        </legend>
+		<% if @salaries!=nil&&@salaries.size>0%>
+		<table class="tablesorter" cellspacing="1">
+		<thead>
+  <tr>
+	<th><%= I18n.t('dept_summary.index.dept_name')%></th>
+	<th><%= I18n.t('dept_summary.index.num')%></th>
+    <th><%= I18n.t('dept_summary.index.position_num')%></th>
+    <th><%= I18n.t('dept_summary.index.car_allowance')%></th>
+    <th><%= I18n.t('dept_summary.index.housing_allowance')%></th>
+    <th><%= I18n.t('dept_summary.index.reissue')%></th>
+    <th><%= I18n.t('dept_summary.index.totle_num')%></th>
+    <th><%= I18n.t('dept_summary.index.lunion_fee')%></th>
+    <th><%= I18n.t('dept_summary.index.housing_fund')%></th>
+    <th><%= I18n.t('dept_summary.index.unemployment')%></th>
+    <th><%= I18n.t('dept_summary.index.pension')%></th>
+    <th><%= I18n.t('dept_summary.index.basic_medical')%></th>
+    <th><%= I18n.t('dept_summary.index.trivial')%></th>
+    <th><%= I18n.t('dept_summary.index.annunity')%></th>
+    <th><%= I18n.t('dept_summary.index.tax_deduct')%></th>
+    <th><%= I18n.t('dept_summary.index.re_deduct')%></th>
+    <th><%= I18n.t('dept_summary.index.total_deduct')%></th>
+    <th><%= I18n.t('dept_summary.index.final_num')%></th>
+  </tr>
+	</thead>
+	<tbody>
+<% @salaries.each do |salary| %>
+  <tr>
+    <td><%=h salary.dept_name %></td>
+	<td><%=h salary.num %></td>
+    <td><%=h salary.postion_num %></td>
+    <td><%=h salary.car_allowance %></td>
+    <td><%=h salary.housing_allowance %></td>
+    <td><%=h salary.reissue %></td>
+    <td><%=h salary.total_num %></td>
+    <td><%=h salary.lunion_fee %></td>
+    <td><%=h salary.housing_fund %></td>
+    <td><%=h salary.unemployment %></td>
+    <td><%=h salary.pension %></td>
+    <td><%=h salary.basic_medical %></td>
+    <td><%=h salary.trivial %></td>
+    <td><%=h salary.annunity %></td>
+    <td><%=h salary.tax_deduct %></td>
+    <td><%=h salary.re_deduct %></td>
+    <td><%=h salary.total_deduct %></td>
+    <td><%=h salary.final_num %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+		<div>
+			<p>
+			<%= will_paginate @salaries, {:class=>"flickr_pagination"}%>  
+			</p>
+			<p class="icons" align="center">
+				<a><%= link_to image_tag("icons/download_icon.png", :alt=>"Download", :title=>"Download"), {:action => 'export_to_excel'}%></a>
+			</p>	
+		</div>
+		<% else %>
+		 <p>
+             <%= I18n.t('dept_summary.index.msg')%>  
+        </p>
+        <% end %>
+	</fieldset>
+</div>		
+
+
+

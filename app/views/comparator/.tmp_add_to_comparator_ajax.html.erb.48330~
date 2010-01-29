@@ -1,0 +1,54 @@
+<div class="fieldsets_table">
+    <fieldset>
+        <legend>
+            List Of Users
+        </legend>
+        <% if @users.empty? %>No Comparable Info Found.<% else %>
+        <table class="list">
+            <tr>
+                <th>
+                    User Name
+                </th>
+				<th>
+					Salary
+				</th>
+				<th>
+					Bonus
+				</th>
+				<th>
+					Festival Fee
+				</th>	
+				<th>
+					Others
+				</th>			
+            </tr>
+            <% @users.each do |user| %>
+            <tr>
+                <td>
+                    <%= user.name %>
+                </td>
+                <td>
+                    <%= user.dept_id %>
+                </td>
+                <td class="icons">
+                    <a><%= link_to_remote(
+                        image_tag('icons/add.png', :alt=>"Add", :title=>"Add"),
+                        :url => {
+                        :controller => "comparator",
+                        :action => "add_user",
+                        :id => user},
+                        :loading => " $('remove_#{user.id}').hide(); $('indicator_#{user.id}').show();",
+                        :complete => "window.location.reload();",
+                        :update => "sal_field"
+                        ) %>
+                    </a>
+                </td>
+            </tr>
+            <% end %>
+        </table>
+        <% end %>
+    </fieldset>
+</div>
+<p>
+    <a href="#" onclick="window.top.hidePopWin();return false;">Cancel</a>
+</p>

@@ -1,0 +1,29 @@
+<div class="fieldsets" id="boc_login">
+    <% form_tag do %>
+    <fieldset>
+        <legend>
+            <%= I18n.t('login.login.title')%>
+        </legend>
+		<% if flash[:login_notice] -%>
+				<div id="login_notice" class='error'><%= flash[:login_notice] %></div>
+		<% end -%>
+		<br/>
+        <p>
+            <label for="name">
+                 <%= I18n.t('login.login.name')%>
+            </label>
+            <%= text_field_tag :name, params[:name] %>
+        </p>
+		
+        <p>
+            <label for="password">
+                 <%=I18n.t('login.login.password')%>
+            </label>
+            <%= password_field_tag :password, params[:password] %>
+        </p>
+        <p class="buttons">
+            <%= submit_tag I18n.t('login.login.button'), :class=>"button"%>
+        </p>
+    </fieldset>
+    <% end %>
+</div>

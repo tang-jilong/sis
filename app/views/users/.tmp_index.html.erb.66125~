@@ -1,0 +1,178 @@
+<div class="fieldsets_table">
+	 <fieldset>
+        <legend>
+            List Of Users
+        </legend>
+			<% if @users.empty? %>No users found.<% else %>
+	<table  class="list">
+    <tr>
+        <th>
+            User Name
+        </th>
+        <th>
+            Role Name
+        </th>
+		<th>
+            Department Name
+        </th>
+		<th>
+            HR ID
+        </th>
+		<th>
+            Work ID
+        </th>
+		<th>
+			Salary Level
+		</th>	
+		<th>
+            Salary Point
+        </th>
+		<th>
+            Grade Assess Level
+        </th>
+        <th class="icons">
+            Action
+        </th>
+    </tr>
+    <% @users.each do |user| %>
+    <tr>
+        <td>
+            <%= user.name %>
+        </td>
+		<td>
+           <%= user.role.role_name%>
+        </td>
+		<td>
+           <%= user.department.dept_name%>
+        </td>
+		<td>
+           <%= user.hr_id%>
+        </td>
+		<td>
+           <%= user.work_id%>
+        </td>
+		<td>
+		   <%= user.salary_level.name%>
+		</td>	
+		<td>
+           <%= user.salary_point%>
+        </td>
+		<td>
+           <%= user.grade_assess_level%>
+        </td>
+        <td class="icons">
+            <a><%= link_to image_tag("icons/magnifier.png", :alt=>"Show", :title=>"Show"), {:action => 'show', :id => user} %></a>
+            <a><%= link_to image_tag("icons/pencil.png", :alt=>"Edit", :title=>"Edit"), {:action => 'edit', :id => user}%></a>
+            <a><%= link_to image_tag("icons/cross.png", :alt=>"Remove", :title=>"Remove"), {:action => 'delete', :id => user},:confirm => 'Are you sure?'%></a>
+        </td>
+    </tr>
+    <% end %>
+</table>
+<% end %>		
+</fieldset>
+</div>
+
+
+<div class="fieldsets_table2">
+	<% form_for :user, :url => { :action => :create } do |f| %>
+	 <fieldset>
+        <legend>
+             Create User 
+        </legend>
+			<%= f.error_messages %>
+		<table>			
+		  <tr><td>
+		    <%= f.label :name %>
+			</td>
+			<td>	
+		    <%= f.text_field :name %>
+		  </td></tr>
+		  <tr><td>
+		    <%= f.label :password %>
+			</td>
+			<td>
+		    <%= f.password_field :password %>
+		  </td></tr>
+		   <tr><td>
+  			 <%= f.label :password_confirmation %>
+			 </td>
+			<td>
+   			 <%= f.password_field :password_confirmation %>
+ 		   </td></tr>
+		   <tr><td>
+  			 <%= f.label :email %>
+			 </td>
+			<td>
+   			 <%= f.text_field :email %>
+ 		   </td></tr>
+		    <tr><td>
+  			 <%= f.label :birthday %>
+			  <td>
+   			  <input class="wdate" type="text" name="birthday" onclick="SelectDate(this,'yyyy-MM-dd')" value=<%=@birthday%>>
+ 		   </td>
+		   		   <tr><td>
+       		<%= f.label :role_id, 'Role Name' %>
+			</td>
+			<td>
+        	 <%= f.select :role_id,
+				@roleItmes, 
+				:prompt=>"select please!"%>
+   		   </td></tr> 
+		  
+		    <tr><td>
+       		 <%= f.label :department_id, 'Department Name' %>
+			 </td>
+			<td>
+        	 <%= f.select :department_id,
+				@deptItems, 
+				:prompt=>"select please!"%>
+   		   </td></tr> 
+		   	<tr><td>
+		   	<%= f.label :salary_level, 'Salary Level' %>
+			</td>
+			<td>
+			 <%= f.select :salary_level_id,
+				@sal_lItems, 
+				:prompt=>"select please!"%>
+			</td></tr>
+		    <tr><td>
+       		 <%= f.label :salary_point, 'Salary Point' %>
+			 </td>
+			<td>
+        	 <%= f.select :salary_point,
+				User::SALARY_POINT, 
+				:prompt=>"select please!"%>
+   		   </td></tr> 
+		   <tr><td>
+       		 <%= f.label :grade_assess_level, 'Grade Assess Level' %>
+			 </td>
+			<td>
+        	 <%= f.select :grade_assess_level,
+				User::GRADE_ASSESS_LEVEL, 
+				:prompt=>"select please!"%>
+   		   </td></tr> 
+		   <tr><td>
+		    <%= f.label :hr_id, "HR ID" %>
+			</td>
+			<td>
+		    <%= f.text_field :hr_id %>
+		  </td></tr>
+		   <tr><td>
+		    <%= f.label :work_id, "Work ID" %>
+			</td>
+			<td>
+		    <%= f.text_field :work_id %>
+		  </td></tr>
+		    <tr><td>
+		    <%= f.label :remark %>
+			</td>
+			<td>
+		    <%= f.text_area :remark %>
+		  </td></tr>
+		  </table>
+		  <p class="buttons">
+		    <%= f.submit 'Create', :class => "button" %>
+		  </p>
+		<% end %>
+	</fieldset>
+</div>

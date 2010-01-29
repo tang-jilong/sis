@@ -1,0 +1,14 @@
+<div class="menu">
+    <% if session[:user_id] %>
+	 <ul id="menu">
+	<% for tmenu in @menu.topmenu %>
+        <li>
+            <a><%= link_to(tmenu.name,
+            {:controller => "menu", :action => "find_side_menu", :id => tmenu},
+            :class=> ( tmenu[:selected]=="selected" ?  "selected" : nil)) %></a>
+        </li>
+	 <% end %>
+	  </ul>
+	    <div id="slide"></div>
+    <% end %>
+</div>

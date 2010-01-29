@@ -1,0 +1,13 @@
+<% if @menu.sidemenu!=nil&&@menu.sidemenu.size!=0 %>
+<div id="tabs3">
+    <ul>
+		 <% for submenu in @menu.sidemenu %>
+           <li>
+        	<% link_to :controller => submenu.flag, :action=>submenu.action do%>
+			<span><%=  I18n.t(submenu.name)%></span>
+			<% end %>
+        </li>
+        <% end %>
+    </ul>
+</div>
+<% end %>

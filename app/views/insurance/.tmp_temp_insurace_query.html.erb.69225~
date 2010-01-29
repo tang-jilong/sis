@@ -1,0 +1,69 @@
+<div class="fieldsets_table0">
+    <fieldset>
+        <legend>
+             <%= I18n.t('insurance.index.title')%> 
+        </legend>
+        <% if @insurace_arry!=nil&&@insurace_arry.size>0 %>
+		 <table class="tablesorter" cellspacing="1">
+            <thead>
+			 <tr>
+		        <th>
+		           <%= I18n.t('insurance.index.name')%>
+		        </th>
+				<th>
+		            <%= I18n.t('insurance.index.date')%>
+		        </th>
+				<th>
+		            <%= I18n.t('insurance.index.housing_fund')%>
+		        </th>
+				<th>
+		            <%= I18n.t('insurance.index.unemployment')%>
+		        </th>
+				<th>
+		            <%= I18n.t('insurance.index.pension')%>
+		        </th>
+				<th>
+		            <%= I18n.t('insurance.index.basic_medical')%>
+		        </th>
+		    </tr>
+		</thead>
+		<tbody>
+		    <% @insurace_arry.each do |item| %>
+		    <tr>
+		        <td>
+		            <%= item.name%>
+		        </td>
+				<td>
+		            <%= item.issue_date.strftime("%Y-%m-%d")%>
+		        </td>
+				<td>
+		            <%= item.housing_fund%>
+		        </td>
+				<td>
+		            <%= item.unemployment%>
+		        </td>
+				<td>
+		            <%= item.pension%>
+		        </td>
+				<td>
+		            <%= item.basic_medical%>
+		        </td>
+		    </tr>
+		    <% end %>
+			</tbody>
+		</table>
+		<div>
+			<p>
+			<%= will_paginate @insurace_arry, {:class=>'flickr_pagination'}%>  
+			</p>
+			<p class="icons" align="center">
+				<a><%= link_to image_tag("icons/download_icon.png", :alt=>"Download", :title=>"Download"), {:action => 'temp_generate_insuarance_excel'}%></a>
+			</p>	
+		</div>
+		<% else %>
+		 <p>
+             <%= I18n.t('insurance.index.message')%>
+        </p>
+        <% end %>
+    </fieldset>
+</div>

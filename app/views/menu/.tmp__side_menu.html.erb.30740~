@@ -1,0 +1,11 @@
+<% if @menu.sidemenu!=nil&&@menu.sidemenu.size!=0 %>
+<div id="side-menu">
+    <ul>
+        <% for submenu in @menu.sidemenu %>
+        <li>
+        	<%= link_to submenu.name, :controller => submenu.flag%>
+        </li>
+        <% end %>
+    </ul>
+</div>
+<% end %>

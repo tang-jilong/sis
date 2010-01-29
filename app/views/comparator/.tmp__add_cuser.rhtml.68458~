@@ -1,0 +1,79 @@
+<div class="fieldsets_table2" id="sal_field">
+    <fieldset>
+        <legend>
+           <%= I18n.t('comparator.addcuser.title')%> 
+        </legend>
+		
+<% remote_form_for:user,
+        :url=> { :controller=>'comparator', :action=>'add_to_comparator_ajax'},
+        :html => {:name => 'add_user_form',:id=>"add_user_form"},
+        :failure => 'alert("action exe failure!")' do |f|
+         %>
+
+<% if @cuser_arry.empty? %><%= I18n.t('comparator.addcuser.message')%> <% else %>
+	<table   class="tablesorter" cellspacing="1">
+		<thead>
+    <tr>
+        <th>
+            <%= I18n.t('comparator.addcuser.username')%>
+        </th>
+		<th>
+            <%= I18n.t('comparator.addcuser.department_name')%>
+        </th>
+
+        <th class="icons">
+            <%= I18n.t('comparator.addcuser.action')%>
+        </th>
+    </tr>
+	</thead>
+	<tbody>
+    <% @cuser_arry.each do |user| %>
+    <tr>
+        <td>
+            <%= user.name %>
+        </td>
+		<td>
+           <%= user.department.dept_name%>
+        </td>
+
+        <td class="icons">
+			 <a><%=
+		        link_to_remote(
+		        image_tag('icons/cross.png', :alt => 'Delete User',:title=>"Delete User"),
+				:url => {
+                        :controller => "comparator",
+                        :action => "delete_cuser",
+                        :id => user},
+				:complete => "window.location.reload();",
+                :update => "sal_field"
+		        ) %>
+			</a>
+        </td>
+    </tr>
+    <% end %>
+	</tbody>
+</table>
+        <% end %>
+		<br/>
+		<br/>
+	 <table>
+            <tr><td>
+                <%= f.label :fDate, I18n.t('comparator.addcuser.fDate') %> 
+				</td>
+				<td>
+				<%= f.text_field :fDate, :html=>{:id=>"fDate", :name=>"fDate"},:onclick=>"SelectDate(this,'yyyy-MM-dd')", :class=>"wdate"%>
+            </td>
+			</tr>
+			 <tr><td>
+                <%= f.label :eDate, I18n.t('comparator.addcuser.eDate')%> 
+				</td>
+				<td>
+				<%= f.text_field :eDate, :html=>{:id=>"eDate", :name=>"eDate"},:onclick=>"SelectDate(this,'yyyy-MM-dd')", :class=>"wdate"%>
+            </td></tr>
+		</table>
+		<p align="center">
+		<input type="submit" class="button" value="<%= I18n.t('comparator.addcuser.button')%>" />
+		</p>
+		<% end%>
+    </fieldset>
+</div>

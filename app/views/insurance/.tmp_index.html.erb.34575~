@@ -1,0 +1,110 @@
+<div class="fieldsets_table">
+    <fieldset>
+        <legend>
+             <%= I18n.t('insurance.index.title')%> 
+        </legend>
+        <% if @insurace_arry!=nil&&@insurace_arry.size>0 %>
+		<table class="list">
+			 <tr>
+		        <th>
+		           <%= I18n.t('insurance.index.name')%>
+		        </th>
+				<th>
+		            <%= I18n.t('insurance.index.date')%>
+		        </th>
+				<th>
+		            <%= I18n.t('insurance.index.housing_fund')%>
+		        </th>
+				<th>
+		            <%= I18n.t('insurance.index.unemployment')%>
+		        </th>
+				<th>
+		            <%= I18n.t('insurance.index.pension')%>
+		        </th>
+				<th>
+		            <%= I18n.t('insurance.index.basic_medical')%>
+		        </th>
+		    </tr>
+		    <% @insurace_arry.each do |item| %>
+		    <tr>
+		        <td>
+		            <%= item.name%>
+		        </td>
+				<td>
+		            <%= item.issue_date%>
+		        </td>
+				<td>
+		            <%= item.housing_fund%>
+		        </td>
+				<td>
+		            <%= item.unemployment%>
+		        </td>
+				<td>
+		            <%= item.pension%>
+		        </td>
+				<td>
+		            <%= item.basic_medical%>
+		        </td>
+		    </tr>
+		    <% end %>
+		</table>
+		<div>
+			<p>
+			<%= will_paginate @insurace_arry%>  
+			</p>
+			<p class="icons" align="center">
+				<a><%= link_to image_tag("icons/download_icon.png", :alt=>"Download", :title=>"Download"), {:action => 'generate_csv'}%></a>
+			</p>	
+		</div>
+		<% else %>
+		 <p>
+             <%= I18n.t('insurance.index.message')%>
+        </p>
+        <% end %>
+    </fieldset>
+</div>
+
+<div class="fieldsets_table2">
+    <fieldset>
+        <legend>
+            <%= I18n.t('insurance.index.title1')%>
+        </legend>
+            <% form_for :sal,@sal,:url => {:action => :index },:html=>{:id=>"insurance_filter_form"} do |f| %>
+			<%= f.error_messages %>
+			<table>
+            <tr><td>
+                <%= f.label :fDate, I18n.t('insurance.index.fDate') %> 
+				</td>
+				<td>
+				<%= f.text_field :fDate, :html=>{:id=>"fDate", :name=>"fDate"},:onclick=>"SelectDate(this,'yyyy-MM-dd')", :class=>"wdate"%>
+            </td>
+			</tr>
+			 <tr><td>
+                <%= f.label :eDate, I18n.t('insurance.index.eDate') %> 
+				</td>
+				<td>
+				<%= f.text_field :eDate, :html=>{:id=>"eDate", :name=>"eDate"},:onclick=>"SelectDate(this,'yyyy-MM-dd')", :class=>"wdate"%>
+            </td></tr>
+			<tr>
+				<td>
+					<%= f.label :dept_check, I18n.t('insurance.index.d_range') %> 	
+				</td>
+				<td>
+					 <%=check_box_tag 'dept_check',:dept_check, false,:disabled => @dept_flag%>
+				</td>
+			</tr>
+				<tr>
+				<td>
+					<%= f.label :bank_check, I18n.t('insurance.index.b_range')%> 	
+				</td>
+				<td>
+					 <%=check_box_tag 'bank_check',:bank_check, false,:disabled => @bank_flag%>
+				</td>
+			</tr>
+			</table>
+			<p class="buttons">
+            <%= f.submit "Search" ,:class => "button" %>
+			</p>
+			<% end %>
+    </fieldset>
+</div>

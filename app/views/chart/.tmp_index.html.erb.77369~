@@ -1,0 +1,37 @@
+<div class="fieldsets_table0">
+    <fieldset>
+        <legend>
+           Salary Diagram 
+        </legend>
+		
+	<table class="list0 wide0">
+		
+	  <tr>
+	    <th>Title</th>
+		 <th>Action</th>
+	  </tr>
+		<% @chart_title.each do |title|%>
+	  <tr>
+	  
+	    	<td><%=title[0] %></td>
+		
+	    <td>
+	    	<a><%=
+		        link_to_remote(
+		        image_tag('icons/chart_icon.jpg', :alt => 'Show Chart',:title=>"Show Chart"),
+				:url => {:controller => "chart",
+                        :action => title[1]},
+				:html => {:name => 'show_chart_form'},
+		        :loading => "Element.show('indicator')",
+		        :complete => "showPopWin('/chart/show_salary_chart_ajax', 800, 600, null, true)",
+		        :failure => 'alert("action exe failure!")'
+		        ) %>
+			</a>
+	    	
+	   </td>
+	  </tr>
+	  <% end %>
+	</table>
+	</fieldset>
+</div>		 
+

@@ -1,0 +1,21 @@
+<div class="fieldsets_table2">
+	<% form_for (@department) do |f| %>
+		  <%= f.error_messages %>
+	 <fieldset>
+        <legend>
+             <%= I18n.t('departments.show.title')%>  
+        </legend>
+		  <p>
+		    <%= f.label I18n.t('departments.show.dept_name')%>
+		    <%= f.text_field :dept_name ,:readonly=>true%>
+		  </p>
+		  <p>
+		    <%= f.label I18n.t('departments.show.remark')%>
+		    <%= f.text_area :remark,:readonly=>true %>
+		  </p>
+		  <p class="buttons">
+			<%= f.submit I18n.t('departments.show.button'), :action=>'index', :class => "button" %>
+			</p>
+		<% end %>
+	</fieldset>
+</div>

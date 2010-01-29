@@ -1,0 +1,925 @@
+
+
+Processing LoginController#index (for 127.0.0.1 at 2010-01-22 10:40:54) [GET]
+Redirected to http://localhost:3000/login/login
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 656ms (DB: 220) | 302 Found [http://localhost/login]
+
+
+Processing LoginController#login (for 127.0.0.1 at 2010-01-22 10:40:55) [GET]
+Rendering template within layouts/menu
+Rendering login/login
+Completed in 63ms (View: 47, DB: 78) | 200 OK [http://localhost/login/login]
+
+
+Processing LoginController#login (for 127.0.0.1 at 2010-01-22 10:41:51) [GET]
+Rendering template within layouts/menu
+Rendering login/login
+Completed in 32ms (View: 32, DB: 0) | 200 OK [http://localhost/login/login]
+
+
+Processing LoginController#index (for 127.0.0.1 at 2010-01-22 10:46:20) [GET]
+Redirected to http://localhost:8080/login/login
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 391ms (DB: 15) | 302 Found [http://localhost/login]
+
+
+Processing LoginController#login (for 127.0.0.1 at 2010-01-22 10:46:22) [GET]
+Rendering template within layouts/menu
+Rendering login/login
+Completed in 78ms (View: 62, DB: 47) | 200 OK [http://localhost/login/login]
+
+
+Processing LoginController#login (for 127.0.0.1 at 2010-01-22 10:46:27) [POST]
+  Parameters: {"name"=>"tim", "commit"=>"登陆", "authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00=", "password"=>"tim"}
+Redirected to http://localhost:8080/login
+Completed in 47ms (DB: 78) | 302 Found [http://localhost/login/login]
+
+
+Processing LoginController#index (for 127.0.0.1 at 2010-01-22 10:46:28) [GET]
+Redirected to http://localhost:8080/menu
+Completed in 0ms (DB: 47) | 302 Found [http://localhost/login]
+
+
+Processing MenuController#index (for 127.0.0.1 at 2010-01-22 10:46:28) [GET]
+Rendering template within layouts/menu
+Rendering menu/index
+Completed in 515ms (View: 390, DB: 140) | 200 OK [http://localhost/menu]
+
+
+Processing MenuController#find_side_menu (for 127.0.0.1 at 2010-01-22 10:46:31) [GET]
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:8080/menu
+Completed in 15ms (DB: 47) | 302 Found [http://localhost/menu/find_side_menu/5]
+
+
+Processing MenuController#index (for 127.0.0.1 at 2010-01-22 10:46:31) [GET]
+Rendering template within layouts/menu
+Rendering menu/index
+Completed in 78ms (View: 63, DB: 204) | 200 OK [http://localhost/menu]
+
+
+Processing ChartController#index (for 127.0.0.1 at 2010-01-22 10:46:36) [GET]
+Rendering template within layouts/menu
+Rendering chart/index
+Completed in 31ms (View: 31, DB: 93) | 200 OK [http://localhost/chart]
+
+
+Processing ChartController#generate_stacked_bar (for 127.0.0.1 at 2010-01-22 10:46:38) [POST]
+  Parameters: {"authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00="}
+Sending data stacked_diagram.png
+Completed in 1531ms (View: 16, DB: 719) | 200 OK [http://localhost/chart/generate_stacked_bar]
+
+
+Processing ChartController#show_salary_chart_ajax (for 127.0.0.1 at 2010-01-22 10:46:40) [GET]
+Rendering template within layouts/modal
+Rendering chart/show_salary_chart_ajax
+Completed in 16ms (View: 16, DB: 31) | 200 OK [http://localhost/chart/show_salary_chart_ajax]
+
+
+Processing ChartController#generate_stacked_bar (for 127.0.0.1 at 2010-01-22 10:46:40) [GET]
+Sending data stacked_diagram.png
+Completed in 781ms (View: 0, DB: 328) | 200 OK [http://localhost/chart/generate_stacked_bar]
+
+
+Processing ChartController#generate_line_chart (for 127.0.0.1 at 2010-01-22 10:46:49) [POST]
+  Parameters: {"authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00="}
+Sending data detail_incoming.png
+Completed in 938ms (View: 0, DB: 392) | 200 OK [http://localhost/chart/generate_line_chart]
+
+
+Processing ChartController#show_salary_chart_ajax (for 127.0.0.1 at 2010-01-22 10:46:50) [GET]
+Rendering template within layouts/modal
+Rendering chart/show_salary_chart_ajax
+Completed in 16ms (View: 0, DB: 31) | 200 OK [http://localhost/chart/show_salary_chart_ajax]
+
+
+Processing ChartController#generate_line_chart (for 127.0.0.1 at 2010-01-22 10:46:50) [GET]
+Sending data detail_incoming.png
+Completed in 891ms (View: 0, DB: 283) | 200 OK [http://localhost/chart/generate_line_chart]
+
+
+Processing ChartController#generate_bar_chart (for 127.0.0.1 at 2010-01-22 10:46:56) [POST]
+  Parameters: {"authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00="}
+Sending data bonus_trend.png
+Completed in 578ms (View: 0, DB: 203) | 200 OK [http://localhost/chart/generate_bar_chart]
+
+
+Processing ChartController#show_salary_chart_ajax (for 127.0.0.1 at 2010-01-22 10:46:57) [GET]
+Rendering template within layouts/modal
+Rendering chart/show_salary_chart_ajax
+Completed in 0ms (View: 0, DB: 15) | 200 OK [http://localhost/chart/show_salary_chart_ajax]
+
+
+Processing ChartController#generate_bar_chart (for 127.0.0.1 at 2010-01-22 10:46:57) [GET]
+Sending data bonus_trend.png
+Completed in 453ms (View: 0, DB: 140) | 200 OK [http://localhost/chart/generate_bar_chart]
+
+
+Processing MenuController#find_side_menu (for 127.0.0.1 at 2010-01-22 10:47:00) [GET]
+  Parameters: {"id"=>"6"}
+Redirected to http://localhost:8080/menu
+Completed in 15ms (DB: 46) | 302 Found [http://localhost/menu/find_side_menu/6]
+
+
+Processing MenuController#index (for 127.0.0.1 at 2010-01-22 10:47:00) [GET]
+Rendering template within layouts/menu
+Rendering menu/index
+Completed in 94ms (View: 78, DB: 63) | 200 OK [http://localhost/menu]
+
+
+Processing FilterController#temp_bonus_query (for 127.0.0.1 at 2010-01-22 10:47:02) [GET]
+Rendering template within layouts/menu
+Rendering filter/temp_bonus_query
+Completed in 156ms (View: 47, DB: 172) | 200 OK [http://localhost/filter/temp_bonus_query]
+
+
+Processing InsuranceController#temp_salary_query (for 127.0.0.1 at 2010-01-22 10:47:07) [GET]
+Rendering template within layouts/menu
+Rendering insurance/temp_salary_query
+Completed in 218ms (View: 78, DB: 156) | 200 OK [http://localhost/insurance/temp_salary_query]
+
+
+Processing FilterController#temp_others_query (for 127.0.0.1 at 2010-01-22 10:47:08) [GET]
+Rendering template within layouts/menu
+Rendering filter/temp_others_query
+Completed in 94ms (View: 63, DB: 63) | 200 OK [http://localhost/filter/temp_others_query]
+
+
+Processing MenuController#find_side_menu (for 127.0.0.1 at 2010-01-22 10:47:13) [GET]
+  Parameters: {"id"=>"6"}
+Redirected to http://localhost:8080/menu
+Completed in 0ms (DB: 46) | 302 Found [http://localhost/menu/find_side_menu/6]
+
+
+Processing MenuController#index (for 127.0.0.1 at 2010-01-22 10:47:13) [GET]
+Rendering template within layouts/menu
+Rendering menu/index
+Completed in 31ms (View: 15, DB: 47) | 200 OK [http://localhost/menu]
+
+
+Processing FilterController#temp_bonus_query (for 127.0.0.1 at 2010-01-22 10:47:16) [GET]
+Rendering template within layouts/menu
+Rendering filter/temp_bonus_query
+Completed in 47ms (View: 31, DB: 32) | 200 OK [http://localhost/filter/temp_bonus_query]
+
+
+Processing FilterController#temp_others_query (for 127.0.0.1 at 2010-01-22 10:47:17) [GET]
+Rendering template within layouts/menu
+Rendering filter/temp_others_query
+Completed in 31ms (View: 31, DB: 47) | 200 OK [http://localhost/filter/temp_others_query]
+
+
+Processing LoginController#logout (for 127.0.0.1 at 2010-01-22 10:47:20) [GET]
+Redirected to http://localhost:8080/login/login
+Completed in 0ms (DB: 31) | 302 Found [http://localhost/login/logout]
+
+
+Processing LoginController#login (for 127.0.0.1 at 2010-01-22 10:47:20) [GET]
+Rendering template within layouts/menu
+Rendering login/login
+Completed in 31ms (View: 31, DB: 47) | 200 OK [http://localhost/login/login]
+
+
+Processing LoginController#login (for 127.0.0.1 at 2010-01-22 10:47:25) [POST]
+  Parameters: {"name"=>"董珊", "commit"=>"登陆", "authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00=", "password"=>"123"}
+Redirected to http://localhost:8080/login
+Completed in 0ms (DB: 16) | 302 Found [http://localhost/login/login]
+
+
+Processing LoginController#index (for 127.0.0.1 at 2010-01-22 10:47:26) [GET]
+Redirected to http://localhost:8080/menu
+Completed in 16ms (DB: 47) | 302 Found [http://localhost/login]
+
+
+Processing MenuController#index (for 127.0.0.1 at 2010-01-22 10:47:26) [GET]
+Rendering template within layouts/menu
+Rendering menu/index
+Completed in 78ms (View: 62, DB: 31) | 200 OK [http://localhost/menu]
+
+
+Processing FilterController#temp_bonus_query (for 127.0.0.1 at 2010-01-22 10:47:28) [GET]
+Rendering template within layouts/menu
+Rendering filter/temp_bonus_query
+Completed in 94ms (View: 63, DB: 62) | 200 OK [http://localhost/filter/temp_bonus_query]
+
+
+Processing MenuController#find_side_menu (for 127.0.0.1 at 2010-01-22 10:47:31) [GET]
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:8080/menu
+Completed in 16ms (DB: 62) | 302 Found [http://localhost/menu/find_side_menu/5]
+
+
+Processing MenuController#index (for 127.0.0.1 at 2010-01-22 10:47:31) [GET]
+Rendering template within layouts/menu
+Rendering menu/index
+Completed in 78ms (View: 63, DB: 31) | 200 OK [http://localhost/menu]
+
+
+Processing ChartController#index (for 127.0.0.1 at 2010-01-22 10:47:33) [GET]
+Rendering template within layouts/menu
+Rendering chart/index
+Completed in 313ms (View: 313, DB: 16) | 200 OK [http://localhost/chart]
+
+
+Processing ChartController#generate_stacked_bar (for 127.0.0.1 at 2010-01-22 10:47:34) [POST]
+  Parameters: {"authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00="}
+Sending data stacked_diagram.png
+Completed in 1265ms (View: 0, DB: 406) | 200 OK [http://localhost/chart/generate_stacked_bar]
+
+
+Processing ChartController#show_salary_chart_ajax (for 127.0.0.1 at 2010-01-22 10:47:36) [GET]
+Rendering template within layouts/modal
+Rendering chart/show_salary_chart_ajax
+Completed in 0ms (View: 0, DB: 63) | 200 OK [http://localhost/chart/show_salary_chart_ajax]
+
+
+Processing ChartController#generate_stacked_bar (for 127.0.0.1 at 2010-01-22 10:47:36) [GET]
+Sending data stacked_diagram.png
+Completed in 1188ms (View: 0, DB: 328) | 200 OK [http://localhost/chart/generate_stacked_bar]
+
+
+Processing ChartController#index (for 127.0.0.1 at 2010-01-22 10:57:05) [GET]
+Rendering template within layouts/menu
+Rendering chart/index
+Completed in 31ms (View: 16, DB: 31) | 200 OK [http://localhost/chart]
+
+
+Processing ChartController#index (for 127.0.0.1 at 2010-01-22 10:57:07) [GET]
+Rendering template within layouts/menu
+Rendering chart/index
+Completed in 47ms (View: 31, DB: 16) | 200 OK [http://localhost/chart]
+
+
+Processing DeptSummaryController#index (for 127.0.0.1 at 2010-01-22 10:57:08) [GET]
+Rendering template within layouts/menu
+Rendering dept_summary/index
+Completed in 188ms (View: 63, DB: 157) | 200 OK [http://localhost/dept_summary]
+
+
+Processing ChartController#index (for 127.0.0.1 at 2010-01-22 10:57:09) [GET]
+Rendering template within layouts/menu
+Rendering chart/index
+Completed in 32ms (View: 32, DB: 15) | 200 OK [http://localhost/chart]
+
+
+Processing ComparatorController#index (for 127.0.0.1 at 2010-01-22 10:57:11) [GET]
+Rendering template within layouts/menu
+Rendering comparator/index
+Completed in 235ms (View: 94, DB: 48) | 200 OK [http://localhost/comparator]
+
+
+Processing ComparatorController#index (for 127.0.0.1 at 2010-01-22 10:57:19) [GET]
+Redirected to http://localhost:8080/login/login
+Filter chain halted as [:authorize] rendered_or_redirected.
+Completed in 359ms (DB: 62) | 302 Found [http://localhost/comparator]
+
+
+Processing LoginController#login (for 127.0.0.1 at 2010-01-22 10:57:19) [GET]
+Rendering template within layouts/menu
+Rendering login/login
+Completed in 15ms (View: 15, DB: 32) | 200 OK [http://localhost/login/login]
+
+
+Processing LoginController#login (for 127.0.0.1 at 2010-01-22 10:57:25) [POST]
+  Parameters: {"name"=>"董珊", "commit"=>"登陆", "authenticity_token"=>"JcXfLZfYgOSof+8pvW7gNpY2zhbmfwLNGsMLMFmkAJQ=", "password"=>"123"}
+Redirected to http://localhost:8080/login
+Completed in 16ms (DB: 31) | 302 Found [http://localhost/login/login]
+
+
+Processing LoginController#index (for 127.0.0.1 at 2010-01-22 10:57:26) [GET]
+Redirected to http://localhost:8080/menu
+Completed in 16ms (DB: 63) | 302 Found [http://localhost/login]
+
+
+Processing MenuController#index (for 127.0.0.1 at 2010-01-22 10:57:26) [GET]
+Rendering template within layouts/menu
+Rendering menu/index
+Completed in 46ms (View: 31, DB: 61) | 200 OK [http://localhost/menu]
+
+
+Processing MenuController#show (for 127.0.0.1 at 2010-01-22 10:57:28) [POST]
+  Parameters: {"authenticity_token"=>"JcXfLZfYgOSof+8pvW7gNpY2zhbmfwLNGsMLMFmkAJQ=", "id"=>"8"}
+Rendering template within layouts/modal
+Rendering menu/show
+Completed in 47ms (View: 32, DB: 16) | 200 OK [http://localhost/menu/show/8]
+
+
+Processing MenuController#show (for 127.0.0.1 at 2010-01-22 10:57:28) [GET]
+Rendering template within layouts/modal
+Rendering menu/show
+Completed in 485ms (View: 453, DB: 48) | 200 OK [http://localhost/menu/show]
+
+
+Processing MenuController#find_side_menu (for 127.0.0.1 at 2010-01-22 10:57:32) [GET]
+  Parameters: {"id"=>"7"}
+Redirected to http://localhost:8080/menu
+Completed in 15ms (DB: 63) | 302 Found [http://localhost/menu/find_side_menu/7]
+
+
+Processing MenuController#index (for 127.0.0.1 at 2010-01-22 10:57:32) [GET]
+Rendering template within layouts/menu
+Rendering menu/index
+Completed in 46ms (View: 31, DB: 31) | 200 OK [http://localhost/menu]
+
+
+Processing MenuController#find_side_menu (for 127.0.0.1 at 2010-01-22 10:57:33) [GET]
+  Parameters: {"id"=>"6"}
+Redirected to http://localhost:8080/menu
+Completed in 16ms (DB: 16) | 302 Found [http://localhost/menu/find_side_menu/6]
+
+
+Processing MenuController#find_side_menu (for 127.0.0.1 at 2010-01-22 10:57:35) [GET]
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:8080/menu
+Completed in 16ms (DB: 32) | 302 Found [http://localhost/menu/find_side_menu/5]
+
+
+Processing MenuController#index (for 127.0.0.1 at 2010-01-22 10:57:35) [GET]
+Rendering template within layouts/menu
+Rendering menu/index
+Completed in 78ms (View: 62, DB: 32) | 200 OK [http://localhost/menu]
+
+
+Processing MenuController#find_side_menu (for 127.0.0.1 at 2010-01-22 10:57:37) [GET]
+  Parameters: {"id"=>"7"}
+Redirected to http://localhost:8080/menu
+Completed in 16ms (DB: 32) | 302 Found [http://localhost/menu/find_side_menu/7]
+
+
+Processing MenuController#index (for 127.0.0.1 at 2010-01-22 10:57:38) [GET]
+Rendering template within layouts/menu
+Rendering menu/index
+Completed in 63ms (View: 47, DB: 94) | 200 OK [http://localhost/menu]
+
+
+Processing SalaryLevelsController#index (for 127.0.0.1 at 2010-01-22 10:57:39) [GET]
+Rendering template within layouts/menu
+Rendering salary_levels/index
+Completed in 109ms (View: 78, DB: 93) | 200 OK [http://localhost/salary_levels]
+
+
+Processing MigrationController#index (for 127.0.0.1 at 2010-01-22 10:57:41) [GET]
+Rendering template within layouts/menu
+Rendering migration/index
+Completed in 375ms (View: 312, DB: 32) | 200 OK [http://localhost/migration]
+
+
+Processing MigrationController#show to csv (for 127.0.0.1 at 2010-01-22 10:57:44) [POST]
+  Parameters: {"authenticity_token"=>"JcXfLZfYgOSof+8pvW7gNpY2zhbmfwLNGsMLMFmkAJQ=", "id"=>"2008-1-15_员工家属慰问(其他)"}
+Rendering template within layouts/modal
+
+ActionView::MissingTemplate (Missing template migration/show.erb in view path app/views:vendor/plugins/fckeditor/app/views):
+  app/controllers/migration_controller.rb:47:in `show'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing MigrationController#show (for 127.0.0.1 at 2010-01-22 10:57:44) [GET]
+Rendering template within layouts/modal
+Rendering migration/show
+Completed in 219ms (View: 188, DB: 46) | 200 OK [http://localhost/migration/show]
+
+
+Processing MigrationController#show (for 127.0.0.1 at 2010-01-22 10:57:47) [GET]
+  Parameters: {"page"=>"2"}
+Rendering template within layouts/modal
+Rendering migration/show
+Completed in 63ms (View: 47, DB: 32) | 200 OK [http://localhost/migration/show?page=2]
+
+
+Processing MigrationController#show (for 127.0.0.1 at 2010-01-22 10:57:48) [GET]
+  Parameters: {"page"=>"3"}
+Rendering template within layouts/modal
+Rendering migration/show
+Completed in 16ms (View: 0, DB: 47) | 200 OK [http://localhost/migration/show?page=3]
+
+
+Processing MigrationController#show (for 127.0.0.1 at 2010-01-22 10:57:49) [GET]
+  Parameters: {"page"=>"4"}
+Rendering template within layouts/modal
+Rendering migration/show
+Completed in 16ms (View: 0, DB: 63) | 200 OK [http://localhost/migration/show?page=4]
+
+
+Processing MenuController#find_side_menu (for 127.0.0.1 at 2010-01-22 10:57:52) [GET]
+  Parameters: {"id"=>"5"}
+Redirected to http://localhost:8080/menu
+Completed in 0ms (DB: 47) | 302 Found [http://localhost/menu/find_side_menu/5]
+
+
+Processing MenuController#index (for 127.0.0.1 at 2010-01-22 10:57:52) [GET]
+Rendering template within layouts/menu
+Rendering menu/index
+Completed in 31ms (View: 16, DB: 63) | 200 OK [http://localhost/menu]
+
+
+Processing ComparatorController#index (for 127.0.0.1 at 2010-01-22 10:57:53) [GET]
+Rendering template within layouts/menu
+Rendering comparator/index
+Completed in 109ms (View: 93, DB: 31) | 200 OK [http://localhost/comparator]
+
+
+Processing ComparatorController#add_cuser (for 127.0.0.1 at 2010-01-22 10:57:55) [POST]
+  Parameters: {"authenticity_token"=>"JcXfLZfYgOSof+8pvW7gNpY2zhbmfwLNGsMLMFmkAJQ=", "id"=>"12"}
+Completed in 32ms (View: 16, DB: 47) | 200 OK [http://localhost/comparator/add_cuser/12]
+
+
+Processing ComparatorController#index (for 127.0.0.1 at 2010-01-22 10:57:55) [GET]
+Rendering template within layouts/menu
+Rendering comparator/index
+Completed in 110ms (View: 94, DB: 47) | 200 OK [http://localhost/comparator]
+
+
+Processing ComparatorController#add_cuser (for 127.0.0.1 at 2010-01-22 10:57:57) [POST]
+  Parameters: {"authenticity_token"=>"JcXfLZfYgOSof+8pvW7gNpY2zhbmfwLNGsMLMFmkAJQ=", "id"=>"20"}
+Completed in 31ms (View: 16, DB: 47) | 200 OK [http://localhost/comparator/add_cuser/20]
+
+
+Processing ComparatorController#index (for 127.0.0.1 at 2010-01-22 10:57:57) [GET]
+Rendering template within layouts/menu
+Rendering comparator/index
+Completed in 110ms (View: 94, DB: 62) | 200 OK [http://localhost/comparator]
+
+
+Processing MenuController#find_side_menu (for 127.0.0.1 at 2010-01-22 10:57:59) [GET]
+  Parameters: {"id"=>"11"}
+Redirected to http://localhost:8080/menu
+Completed in 16ms (DB: 31) | 302 Found [http://localhost/menu/find_side_menu/11]
+
+
+Processing MenuController#index (for 127.0.0.1 at 2010-01-22 10:57:59) [GET]
+Rendering template within layouts/menu
+Rendering menu/index
+Completed in 94ms (View: 63, DB: 31) | 200 OK [http://localhost/menu]
+
+
+Processing MenuController#show (for 127.0.0.1 at 2010-01-22 10:58:01) [POST]
+  Parameters: {"authenticity_token"=>"JcXfLZfYgOSof+8pvW7gNpY2zhbmfwLNGsMLMFmkAJQ=", "id"=>"8"}
+Rendering template within layouts/modal
+Rendering menu/show
+Completed in 15ms (View: 0, DB: 62) | 200 OK [http://localhost/menu/show/8]
+
+
+Processing MenuController#show (for 127.0.0.1 at 2010-01-22 10:58:02) [GET]
+Rendering template within layouts/modal
+Rendering menu/show
+Completed in 16ms (View: 0, DB: 63) | 200 OK [http://localhost/menu/show]
+
+
+Processing MenuController#find_side_menu (for 127.0.0.1 at 2010-01-22 10:58:04) [GET]
+  Parameters: {"id"=>"18"}
+Redirected to http://localhost:8080/menu
+Completed in 16ms (DB: 47) | 302 Found [http://localhost/menu/find_side_menu/18]
+
+
+Processing MenuController#index (for 127.0.0.1 at 2010-01-22 10:58:04) [GET]
+Rendering template within layouts/menu
+Rendering menu/index
+Completed in 93ms (View: 47, DB: 47) | 200 OK [http://localhost/menu]
+
+
+Processing FilterController#historical_others_query (for 127.0.0.1 at 2010-01-22 10:58:05) [GET]
+Rendering template within layouts/menu
+Rendering filter/historical_others_query
+Completed in 109ms (View: 109, DB: 47) | 200 OK [http://localhost/filter/historical_others_query]
+
+
+Processing FilterController#historical_others_query (for 127.0.0.1 at 2010-01-22 10:58:13) [POST]
+  Parameters: {"commit"=>"搜索", "authenticity_token"=>"JcXfLZfYgOSof+8pvW7gNpY2zhbmfwLNGsMLMFmkAJQ=", "bonus"=>{"fDate"=>"2007-01-10", "bank_check"=>"0", "dept_check"=>"0", "eDate"=>"2010-01-22", "type_name"=>"其它"}}
+Rendering template within layouts/menu
+Rendering filter/historical_others_query
+Completed in 171ms (View: 140, DB: 110) | 200 OK [http://localhost/filter/historical_others_query]
+
+
+Processing FilterController#historical_others_query (for 127.0.0.1 at 2010-01-22 10:58:14) [POST]
+  Parameters: {"commit"=>"搜索", "authenticity_token"=>"JcXfLZfYgOSof+8pvW7gNpY2zhbmfwLNGsMLMFmkAJQ=", "bonus"=>{"fDate"=>"2007-01-10", "bank_check"=>"1", "dept_check"=>"0", "eDate"=>"2010-01-22", "type_name"=>"其它"}}
+Rendering template within layouts/menu
+Rendering filter/historical_others_query
+Completed in 125ms (View: 93, DB: 47) | 200 OK [http://localhost/filter/historical_others_query]
+
+
+Processing FilterController#generate_others_excel (for 127.0.0.1 at 2010-01-22 10:58:16) [GET]
+Completed in 922ms (View: 0, DB: 79) | 200 OK [http://localhost/filter/generate_others_excel]
+
+
+Processing FilterController#historical_others_query (for 127.0.0.1 at 2010-01-22 10:58:27) [GET]
+Rendering template within layouts/menu
+Rendering filter/historical_others_query
+Completed in 47ms (View: 31, DB: 78) | 200 OK [http://localhost/filter/historical_others_query]
+
+
+Processing FilterController#historical_others_query (for 127.0.0.1 at 2010-01-22 10:58:27) [GET]
+Rendering template within layouts/menu
+Rendering filter/historical_others_query
+Completed in 47ms (View: 31, DB: 62) | 200 OK [http://localhost/filter/historical_others_query]
+
+
+Processing FilterController#historical_others_query (for 127.0.0.1 at 2010-01-22 10:58:28) [GET]
+Rendering template within layouts/menu
+Rendering filter/historical_others_query
+Completed in 93ms (View: 78, DB: 31) | 200 OK [http://localhost/filter/historical_others_query]
+
+
+Processing FilterController#historical_others_query (for 127.0.0.1 at 2010-01-22 10:58:30) [GET]
+Rendering template within layouts/menu
+Rendering filter/historical_others_query
+Completed in 93ms (View: 78, DB: 31) | 200 OK [http://localhost/filter/historical_others_query]
+
+
+Processing FilterController#historical_others_query (for 127.0.0.1 at 2010-01-22 10:58:32) [GET]
+Rendering template within layouts/menu
+Rendering filter/historical_others_query
+Completed in 93ms (View: 78, DB: 47) | 200 OK [http://localhost/filter/historical_others_query]
+
+
+Processing FilterController#historical_others_query (for 127.0.0.1 at 2010-01-22 10:58:34) [GET]
+Rendering template within layouts/menu
+Rendering filter/historical_others_query
+Completed in 47ms (View: 31, DB: 62) | 200 OK [http://localhost/filter/historical_others_query]
+
+
+Processing FilterController#index (for 127.0.0.1 at 2010-01-22 10:58:36) [GET]
+Rendering template within layouts/menu
+Rendering filter/index
+Completed in 203ms (View: 109, DB: 63) | 200 OK [http://localhost/filter]
+
+
+Processing FilterController#index (for 127.0.0.1 at 2010-01-22 10:58:38) [GET]
+Rendering template within layouts/menu
+Rendering filter/index
+Completed in 78ms (View: 46, DB: 47) | 200 OK [http://localhost/filter]
+
+
+Processing SalariesController#index (for 127.0.0.1 at 2010-01-22 10:58:40) [GET]
+Rendering template within layouts/menu
+Rendering salaries/index
+Completed in 157ms (View: 63, DB: 109) | 200 OK [http://localhost/salaries]
+
+
+Processing SalariesController#index (for 127.0.0.1 at 2010-01-22 10:58:42) [GET]
+Rendering template within layouts/menu
+Rendering salaries/index
+Completed in 46ms (View: 31, DB: 32) | 200 OK [http://localhost/salaries]
+
+
+Processing SalariesController#index (for 127.0.0.1 at 2010-01-22 10:58:44) [GET]
+Rendering template within layouts/menu
+Rendering salaries/index
+Completed in 15ms (View: 15, DB: 63) | 200 OK [http://localhost/salaries]
+
+
+Processing ComparatorController#add_cuser (for 127.0.0.1 at 2010-01-22 11:02:24) [POST]
+  Parameters: {"authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00=", "id"=>"30"}
+Completed in 31ms (View: 16, DB: 31) | 200 OK [http://localhost/comparator/add_cuser/30]
+
+
+Processing ComparatorController#index (for 127.0.0.1 at 2010-01-22 11:02:25) [GET]
+Rendering template within layouts/menu
+Rendering comparator/index
+Completed in 235ms (View: 219, DB: 94) | 200 OK [http://localhost/comparator]
+
+
+Processing ComparatorController#add_cuser (for 127.0.0.1 at 2010-01-22 11:02:26) [POST]
+  Parameters: {"authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00=", "id"=>"23"}
+Completed in 15ms (View: 0, DB: 62) | 200 OK [http://localhost/comparator/add_cuser/23]
+
+
+Processing ComparatorController#index (for 127.0.0.1 at 2010-01-22 11:02:26) [GET]
+Rendering template within layouts/menu
+Rendering comparator/index
+Completed in 266ms (View: 266, DB: 31) | 200 OK [http://localhost/comparator]
+
+
+Processing ComparatorController#add_cuser (for 127.0.0.1 at 2010-01-22 11:02:27) [POST]
+  Parameters: {"authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00=", "id"=>"32"}
+Completed in 16ms (View: 0, DB: 32) | 200 OK [http://localhost/comparator/add_cuser/32]
+
+
+Processing ComparatorController#index (for 127.0.0.1 at 2010-01-22 11:02:27) [GET]
+Rendering template within layouts/menu
+Rendering comparator/index
+Completed in 47ms (View: 32, DB: 63) | 200 OK [http://localhost/comparator]
+
+
+Processing ComparatorController#add_cuser (for 127.0.0.1 at 2010-01-22 11:02:28) [POST]
+  Parameters: {"authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00=", "id"=>"28"}
+Completed in 156ms (View: 15, DB: 62) | 200 OK [http://localhost/comparator/add_cuser/28]
+
+
+Processing ComparatorController#index (for 127.0.0.1 at 2010-01-22 11:02:29) [GET]
+Rendering template within layouts/menu
+Rendering comparator/index
+Completed in 93ms (View: 78, DB: 63) | 200 OK [http://localhost/comparator]
+
+
+Processing ComparatorController#add_cuser (for 127.0.0.1 at 2010-01-22 11:02:33) [POST]
+  Parameters: {"authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00=", "id"=>"33"}
+Completed in 16ms (View: 16, DB: 78) | 200 OK [http://localhost/comparator/add_cuser/33]
+
+
+Processing ComparatorController#index (for 127.0.0.1 at 2010-01-22 11:02:33) [GET]
+Rendering template within layouts/menu
+Rendering comparator/index
+Completed in 125ms (View: 109, DB: 31) | 200 OK [http://localhost/comparator]
+
+
+Processing ComparatorController#add_cuser (for 127.0.0.1 at 2010-01-22 11:02:35) [POST]
+  Parameters: {"authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00=", "id"=>"14"}
+Completed in 16ms (View: 16, DB: 47) | 200 OK [http://localhost/comparator/add_cuser/14]
+
+
+Processing ComparatorController#index (for 127.0.0.1 at 2010-01-22 11:02:35) [GET]
+Rendering template within layouts/menu
+Rendering comparator/index
+Completed in 140ms (View: 109, DB: 31) | 200 OK [http://localhost/comparator]
+
+
+Processing ComparatorController#add_cuser (for 127.0.0.1 at 2010-01-22 11:02:38) [POST]
+  Parameters: {"authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00=", "id"=>"25"}
+Completed in 32ms (View: 16, DB: 79) | 200 OK [http://localhost/comparator/add_cuser/25]
+
+
+Processing ComparatorController#index (for 127.0.0.1 at 2010-01-22 11:02:38) [GET]
+Rendering template within layouts/menu
+Rendering comparator/index
+Completed in 125ms (View: 109, DB: 16) | 200 OK [http://localhost/comparator]
+
+
+Processing ComparatorController#add_cuser (for 127.0.0.1 at 2010-01-22 11:02:40) [POST]
+  Parameters: {"authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00=", "id"=>"30"}
+Completed in 15ms (View: 0, DB: 47) | 200 OK [http://localhost/comparator/add_cuser/30]
+
+
+Processing ComparatorController#index (for 127.0.0.1 at 2010-01-22 11:02:40) [GET]
+Rendering template within layouts/menu
+Rendering comparator/index
+Completed in 109ms (View: 93, DB: 31) | 200 OK [http://localhost/comparator]
+
+
+Processing ComparatorController#add_cuser (for 127.0.0.1 at 2010-01-22 11:02:42) [POST]
+  Parameters: {"authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00=", "id"=>"19"}
+Completed in 31ms (View: 16, DB: 62) | 200 OK [http://localhost/comparator/add_cuser/19]
+
+
+Processing ComparatorController#index (for 127.0.0.1 at 2010-01-22 11:02:42) [GET]
+Rendering template within layouts/menu
+Rendering comparator/index
+Completed in 125ms (View: 109, DB: 31) | 200 OK [http://localhost/comparator]
+
+
+Processing ComparatorController#add_cuser (for 127.0.0.1 at 2010-01-22 11:02:47) [POST]
+  Parameters: {"authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00=", "id"=>"19"}
+Completed in 47ms (View: 31, DB: 63) | 200 OK [http://localhost/comparator/add_cuser/19]
+
+
+Processing ComparatorController#index (for 127.0.0.1 at 2010-01-22 11:02:47) [GET]
+Rendering template within layouts/menu
+Rendering comparator/index
+Completed in 141ms (View: 125, DB: 31) | 200 OK [http://localhost/comparator]
+
+
+Processing ComparatorController#add_cuser (for 127.0.0.1 at 2010-01-22 11:02:52) [POST]
+  Parameters: {"authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00=", "id"=>"29"}
+Completed in 31ms (View: 15, DB: 31) | 200 OK [http://localhost/comparator/add_cuser/29]
+
+
+Processing ComparatorController#index (for 127.0.0.1 at 2010-01-22 11:02:52) [GET]
+Rendering template within layouts/menu
+Rendering comparator/index
+Completed in 94ms (View: 62, DB: 31) | 200 OK [http://localhost/comparator]
+
+
+Processing ComparatorController#delete_cuser (for 127.0.0.1 at 2010-01-22 11:03:00) [POST]
+  Parameters: {"authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00=", "id"=>"19"}
+Completed in 31ms (View: 16, DB: 15) | 200 OK [http://localhost/comparator/delete_cuser/19]
+
+
+Processing ComparatorController#index (for 127.0.0.1 at 2010-01-22 11:03:00) [GET]
+Rendering template within layouts/menu
+Rendering comparator/index
+Completed in 140ms (View: 125, DB: 31) | 200 OK [http://localhost/comparator]
+
+
+Processing ComparatorController#add_cuser (for 127.0.0.1 at 2010-01-22 11:03:02) [POST]
+  Parameters: {"authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00=", "id"=>"16"}
+Completed in 32ms (View: 16, DB: 110) | 200 OK [http://localhost/comparator/add_cuser/16]
+
+
+Processing ComparatorController#index (for 127.0.0.1 at 2010-01-22 11:03:03) [GET]
+Rendering template within layouts/menu
+Rendering comparator/index
+Completed in 78ms (View: 62, DB: 78) | 200 OK [http://localhost/comparator]
+
+
+Processing ComparatorController#add_cuser (for 127.0.0.1 at 2010-01-22 11:03:11) [POST]
+  Parameters: {"authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00=", "id"=>"19"}
+Completed in 32ms (View: 16, DB: 94) | 200 OK [http://localhost/comparator/add_cuser/19]
+
+
+Processing ComparatorController#index (for 127.0.0.1 at 2010-01-22 11:03:11) [GET]
+Rendering template within layouts/menu
+Rendering comparator/index
+Completed in 140ms (View: 109, DB: 32) | 200 OK [http://localhost/comparator]
+
+
+Processing ComparatorController#add_to_comparator_ajax (for 127.0.0.1 at 2010-01-22 11:03:19) [POST]
+  Parameters: {"user"=>{"fDate"=>"1996-01-25", "eDate"=>"2010-01-22"}, "authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00="}
+
+NoMethodError (undefined method `+' for nil:NilClass):
+  app/controllers/comparator_controller.rb:66:in `add_to_comparator_ajax'
+  app/controllers/comparator_controller.rb:33:in `each'
+  app/controllers/comparator_controller.rb:33:in `add_to_comparator_ajax'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ComparatorController#delete_cuser (for 127.0.0.1 at 2010-01-22 11:03:35) [POST]
+  Parameters: {"authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00=", "id"=>"29"}
+Completed in 31ms (View: 15, DB: 47) | 200 OK [http://localhost/comparator/delete_cuser/29]
+
+
+Processing ComparatorController#index (for 127.0.0.1 at 2010-01-22 11:03:35) [GET]
+Rendering template within layouts/menu
+Rendering comparator/index
+Completed in 172ms (View: 140, DB: 189) | 200 OK [http://localhost/comparator]
+
+
+Processing ComparatorController#add_to_comparator_ajax (for 127.0.0.1 at 2010-01-22 11:03:37) [POST]
+  Parameters: {"user"=>{"fDate"=>"1996-01-25", "eDate"=>"2010-01-22"}, "authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00="}
+
+NoMethodError (undefined method `+' for nil:NilClass):
+  app/controllers/comparator_controller.rb:66:in `add_to_comparator_ajax'
+  app/controllers/comparator_controller.rb:33:in `each'
+  app/controllers/comparator_controller.rb:33:in `add_to_comparator_ajax'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ComparatorController#add_to_comparator_ajax (for 127.0.0.1 at 2010-01-22 11:04:37) [POST]
+  Parameters: {"user"=>{"fDate"=>"1996-01-25", "eDate"=>"2010-01-22"}, "authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00="}
+
+NoMethodError (undefined method `+' for nil:NilClass):
+  app/controllers/comparator_controller.rb:66:in `add_to_comparator_ajax'
+  app/controllers/comparator_controller.rb:33:in `each'
+  app/controllers/comparator_controller.rb:33:in `add_to_comparator_ajax'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ComparatorController#add_to_comparator_ajax (for 127.0.0.1 at 2010-01-22 11:06:21) [POST]
+  Parameters: {"user"=>{"fDate"=>"1996-01-25", "eDate"=>"2010-01-22"}, "authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00="}
+
+NoMethodError (undefined method `+' for nil:NilClass):
+  app/controllers/comparator_controller.rb:66:in `add_to_comparator_ajax'
+  app/controllers/comparator_controller.rb:33:in `each'
+  app/controllers/comparator_controller.rb:33:in `add_to_comparator_ajax'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing ComparatorController#add_to_comparator_ajax (for 127.0.0.1 at 2010-01-22 11:06:59) [POST]
+  Parameters: {"user"=>{"fDate"=>"1996-01-25", "eDate"=>"2010-01-22"}, "authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00="}
+
+NoMethodError (undefined method `+' for nil:NilClass):
+  app/controllers/comparator_controller.rb:66:in `add_to_comparator_ajax'
+  app/controllers/comparator_controller.rb:33:in `each'
+  app/controllers/comparator_controller.rb:33:in `add_to_comparator_ajax'
+
+Rendering rescues/layout (internal_server_error)
+
+
+Processing LoginController#index (for 127.0.0.1 at 2010-01-22 11:09:23) [GET]
+Redirected to http://localhost:8080/menu
+Completed in 62ms (DB: 16) | 302 Found [http://localhost/login]
+
+
+Processing MenuController#index (for 127.0.0.1 at 2010-01-22 11:09:24) [GET]
+Rendering template within layouts/menu
+Rendering menu/index
+Completed in 453ms (View: 406, DB: 95) | 200 OK [http://localhost/menu]
+
+
+Processing ComparatorController#index (for 127.0.0.1 at 2010-01-22 11:09:33) [GET]
+Rendering template within layouts/menu
+Rendering comparator/index
+Completed in 329ms (View: 297, DB: 31) | 200 OK [http://localhost/comparator]
+
+
+Processing ComparatorController#add_to_comparator_ajax (for 127.0.0.1 at 2010-01-22 11:09:41) [POST]
+  Parameters: {"user"=>{"fDate"=>"1993-01-12", "eDate"=>"2010-01-22"}, "authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00="}
+Rendering template within layouts/menu
+Rendering comparator/add_to_comparator_ajax
+Completed in 250ms (View: 16, DB: 125) | 200 OK [http://localhost/comparator/add_to_comparator_ajax]
+
+
+Processing ComparatorController#index (for 127.0.0.1 at 2010-01-22 11:10:08) [GET]
+  Parameters: {"class"=>"button"}
+Rendering template within layouts/menu
+Rendering comparator/index
+Completed in 141ms (View: 125, DB: 32) | 200 OK [http://localhost/comparator?class=button]
+
+
+Processing ComparatorController#delete_cuser (for 127.0.0.1 at 2010-01-22 11:10:11) [POST]
+  Parameters: {"authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00=", "id"=>"14"}
+Completed in 31ms (View: 16, DB: 47) | 200 OK [http://localhost/comparator/delete_cuser/14]
+
+
+Processing ComparatorController#index (for 127.0.0.1 at 2010-01-22 11:10:12) [GET]
+  Parameters: {"class"=>"button"}
+Rendering template within layouts/menu
+Rendering comparator/index
+Completed in 125ms (View: 109, DB: 47) | 200 OK [http://localhost/comparator?class=button]
+
+
+Processing ComparatorController#add_to_comparator_ajax (for 127.0.0.1 at 2010-01-22 11:10:21) [POST]
+  Parameters: {"user"=>{"fDate"=>"1992-01-08", "eDate"=>"2010-01-22"}, "authenticity_token"=>"7uLi5cj0PWAn5KVRDOjSlhQ5xMQlCk30SKUYPfsvS00="}
+Rendering template within layouts/menu
+Rendering comparator/add_to_comparator_ajax
+Completed in 219ms (View: 16, DB: 141) | 200 OK [http://localhost/comparator/add_to_comparator_ajax]
+
+
+Processing ComparatorController#index (for 127.0.0.1 at 2010-01-22 11:10:27) [GET]
+  Parameters: {"class"=>"button"}
+Rendering template within layouts/menu
+Rendering comparator/index
+Completed in 313ms (View: 282, DB: 46) | 200 OK [http://localhost/comparator?class=button]
+
+
+Processing ComparatorController#index (for 127.0.0.1 at 2010-01-22 11:10:57) [GET]
+  Parameters: {"class"=>"button", "page"=>"2"}
+Rendering template within layouts/menu
+Rendering comparator/index
+Completed in 125ms (View: 109, DB: 47) | 200 OK [http://localhost/comparator?class=button&page=2]
+
+
+Processing ComparatorController#index (for 127.0.0.1 at 2010-01-22 11:10:59) [GET]
+  Parameters: {"class"=>"button", "page"=>"3"}
+Rendering template within layouts/menu
+Rendering comparator/index
+Completed in 125ms (View: 109, DB: 47) | 200 OK [http://localhost/comparator?class=button&page=3]
+
+
+Processing ComparatorController#index (for 127.0.0.1 at 2010-01-22 11:11:01) [GET]
+  Parameters: {"class"=>"button", "page"=>"4"}
+Rendering template within layouts/menu
+Rendering comparator/index
+Completed in 140ms (View: 94, DB: 62) | 200 OK [http://localhost/comparator?class=button&page=4]
+
+
+Processing LoginController#index (for 127.0.0.1 at 2010-01-22 11:22:23) [GET]
+Redirected to http://localhost:8080/menu
+Completed in 0ms (DB: 47) | 302 Found [http://localhost/login]
+
+
+Processing MenuController#index (for 127.0.0.1 at 2010-01-22 11:22:24) [GET]
+Rendering template within layouts/menu
+Rendering menu/index
+Completed in 78ms (View: 47, DB: 46) | 200 OK [http://localhost/menu]
+
+
+Processing MenuController#user_info_edit (for 127.0.0.1 at 2010-01-22 11:22:29) [GET]
+Rendering template within layouts/menu
+Rendering menu/user_info_edit
+Completed in 78ms (View: 62, DB: 31) | 200 OK [http://localhost/menu/user_info_edit]
+
+
+Processing LoginController#logout (for 127.0.0.1 at 2010-01-22 11:22:32) [GET]
+Redirected to http://localhost:8080/login/login
+Completed in 0ms (DB: 47) | 302 Found [http://localhost/login/logout]
+
+
+Processing LoginController#login (for 127.0.0.1 at 2010-01-22 11:22:32) [GET]
+Rendering template within layouts/menu
+Rendering login/login
+Completed in 31ms (View: 31, DB: 62) | 200 OK [http://localhost/login/login]
+
+
+Processing LoginController#login (for 127.0.0.1 at 2010-01-22 11:23:12) [GET]
+Rendering template within layouts/menu
+Rendering login/login
+Completed in 31ms (View: 16, DB: 46) | 200 OK [http://localhost/login/login]
+
+
+Processing LoginController#login (for 127.0.0.1 at 2010-01-22 11:23:16) [GET]
+Rendering template within layouts/menu
+Rendering login/login
+Completed in 15ms (View: 15, DB: 31) | 200 OK [http://localhost/login/login]
+
+
+Processing LoginController#login (for 127.0.0.1 at 2010-01-22 11:23:18) [GET]
+Rendering template within layouts/menu
+Rendering login/login
+Completed in 16ms (View: 16, DB: 47) | 200 OK [http://localhost/login/login]
+
+
+Processing LoginController#login (for 127.0.0.1 at 2010-01-22 11:23:19) [GET]
+Rendering template within layouts/menu
+Rendering login/login
+Completed in 15ms (View: 15, DB: 109) | 200 OK [http://localhost/login/login]
+
+
+Processing LoginController#login (for 127.0.0.1 at 2010-01-22 11:23:20) [GET]
+Rendering template within layouts/menu
+Rendering login/login
+Completed in 16ms (View: 0, DB: 47) | 200 OK [http://localhost/login/login]

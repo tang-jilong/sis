@@ -1,0 +1,32 @@
+<div class="fieldsets_table0">
+    <fieldset>
+        <legend>
+            Listing Bulletins
+        </legend>
+	
+	<table class="tablesorter" cellspacing="1">
+	<thead>
+	  <tr>
+	  	<th>Issue date</th>
+	    <th>Title</th>
+	    <th>Autor</th>
+		 <th>Action</th>
+	  </tr>
+	</thead>
+	<tbody>
+	<% @bulletins.each do |bulletin| %>
+	  <tr>
+	  	<td><%=h bulletin.issue_date %></td>
+	    <td><%=h bulletin.title %></td>
+	    <td><%=h bulletin.autor %></td>
+		<td><%= link_to image_tag("icons/magnifier.png", :alt=>"Show", :title=>"Show"), {:controller=>'menu',:action => 'show', :id => bulletin }%>
+	  </td>
+	  </tr>
+	<% end %>
+	</tbody>
+	</table>
+	</fieldset>
+</div>		 
+<br />
+
+

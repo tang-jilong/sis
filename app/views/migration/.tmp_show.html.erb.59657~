@@ -1,0 +1,174 @@
+<div class="fieldsets_table" id="sal_data">
+    <fieldset>
+        <legend>
+            <%= I18n.t('migration.show.title')%> 
+        </legend>
+        <% if @salary_arry!=nil&&@salary_arry.size>0 %>
+		 <table class="tablesorter" cellspacing="1">
+		<thead>
+		    <tr>
+		        <% @headers.each do |title| %>
+		        <th>
+		            <%= title %>
+		        </th>
+		        <% end %>
+		    </tr>
+			</thead>
+			<tbody>
+		    <% @salary_arry.each do |item| %>
+		    <tr>
+		        <% item.data_info.split("|").each do |data| %>
+		        <td>
+		            <%= data %>
+		        </td>
+		        <% end %>
+		    </tr>
+		    <% end %>
+			</tbody>
+		</table>
+		
+		<div>
+			<p>
+			<%= will_paginate @salary_arry, {:class=>'flickr_pagination'}%>
+			</p>  
+		</div>	
+		<% elsif @salaries!=nil&&@salaries.size>0%>
+		<table class="tablesorter" cellspacing="1">
+		<thead>
+		    <tr>
+		        <th>
+		            <%= I18n.t('migration.show.issue_data')%>
+		        </th>
+				<th>
+		            <%= I18n.t('migration.show.name')%>
+		        </th>
+				<th>
+		            <%= I18n.t('migration.show.dept_name')%>
+		        </th>
+				<th>
+		            <%= I18n.t('migration.show.postion_num')%>
+		        </th>
+				<th>
+		            <%= I18n.t('migration.show.car_allowance')%>
+		        </th>
+				<th>
+		            <%= I18n.t('migration.show.housing_allowance')%>
+		        </th>
+				<th>
+		           <%= I18n.t('migration.show.reissue')%>
+		        </th>
+				<th>
+		            <%= I18n.t('migration.show.total_num')%>
+		        </th>
+				<th>
+		           <%= I18n.t('migration.show.lunion_fee')%>
+		        </th>
+				<th>
+		            <%= I18n.t('migration.show.housing_fund')%>
+		        </th>
+				<th>
+		            <%= I18n.t('migration.show.unemployment')%>
+		        </th>
+				<th>
+		            <%= I18n.t('migration.show.pension')%>
+		        </th>
+				<th>
+		           <%= I18n.t('migration.show.basic_medical')%>
+		        </th>
+				<th>
+		           <%= I18n.t('migration.show.trivial')%>
+		        </th>
+				<th>
+		           <%= I18n.t('migration.show.annunity')%>
+		        </th>
+				<th>
+		            <%= I18n.t('migration.show.tax_deduct')%>
+		        </th>
+				<th>
+		            <%= I18n.t('migration.show.re_decuct')%>
+		        </th>
+				<th>
+		            <%= I18n.t('migration.show.total_deduct')%>
+		        </th>
+				<th>
+		            <%= I18n.t('migration.show.final_num')%>
+		        </th>
+		        
+		    </tr>
+			</thead>
+			<tbody>
+		    <% @salaries.each do |item| %>
+		    <tr>
+		        <td>
+		            <%= item.issue_date %>
+		        </td>
+				<td>
+		            <%= item.name %>
+		        </td>
+				<td>
+		            <%= item.dept_name %>
+		        </td>
+				<td>
+		            <%= item.postion_num %>
+		        </td>
+				<td>
+		            <%= item.car_allowance %>
+		        </td>
+				<td>
+		            <%= item.housing_allowance %>
+		        </td>
+				<td>
+		            <%= item.reissue %>
+		        </td>
+				<td>
+		            <%= item.total_num %>
+		        </td>
+				<td>
+		            <%= item.lunion_fee %>
+		        </td>
+				<td>
+		            <%= item.housing_fund %>
+		        </td>
+				<td>
+		            <%= item.unemployment %>
+		        </td>
+				<td>
+		            <%= item.pension %>
+		        </td>
+				<td>
+		            <%= item.basic_medical %>
+		        </td>
+				<td>
+		            <%= item.trivial %>
+		        </td>
+				<td>
+		            <%= item.annunity %>
+		        </td>
+				<td>
+		            <%= item.tax_deduct %>
+		        </td>
+				<td>
+		            <%= item.re_deduct %>
+		        </td>
+				<td>
+		            <%= item.total_deduct %>
+		        </td>
+				<td>
+		            <%= item.final_num %>
+		        </td>
+		        <% end %>
+		    </tr>
+			</tbody>
+		</table>
+		 	<div>
+			<p>
+			<%= will_paginate @salaries, {:class=>'flickr_pagination'}%>
+			</p>  
+		</div>	
+		<% else%>
+		<p>
+            <%= I18n.t('migration.show.message')%> 
+        </p>
+        <% end %>
+    </fieldset>
+</div>

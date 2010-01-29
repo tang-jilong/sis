@@ -1,0 +1,156 @@
+<div class="fieldsets_table" id="sal_data">
+    <fieldset>
+        <legend>
+            List Of Imported Data
+        </legend>
+        <% if @salary_arry!=nil&&@salary_arry.size>0 %>
+		<table class="list">
+		    <tr>
+		        <% @headers.each do |title| %>
+		        <th>
+		            <%= title %>
+		        </th>
+		        <% end %>
+		    </tr>
+		    <% @salary_arry.each do |item| %>
+		    <tr>
+		        <% item.data_info.split("|").each do |data| %>
+		        <td>
+		            <%= data %>
+		        </td>
+		        <% end %>
+		    </tr>
+		    <% end %>
+		</table>
+		<% elsif @salaries!=nil&&@salaries.size>0%>
+		<table class="list">
+		    <tr>
+		        <th>
+		            issue date
+		        </th>
+				<th>
+		            name
+		        </th>
+				<th>
+		            dept name
+		        </th>
+				<th>
+		            postion num
+		        </th>
+				<th>
+		            car allowance
+		        </th>
+				<th>
+		            housing allowance
+		        </th>
+				<th>
+		            reissue
+		        </th>
+				<th>
+		            total num
+		        </th>
+				<th>
+		            lunion fee
+		        </th>
+				<th>
+		            housing fund
+		        </th>
+				<th>
+		            unemployment
+		        </th>
+				<th>
+		            pension
+		        </th>
+				<th>
+		            basic medical
+		        </th>
+				<th>
+		            trivial
+		        </th>
+				<th>
+		            annunity
+		        </th>
+				<th>
+		            tax_deduct
+		        </th>
+				<th>
+		            re_deduct
+		        </th>
+				<th>
+		            total_deduct
+		        </th>
+				<th>
+		            final_num
+		        </th>
+		        
+		    </tr>
+		    <% @salaries.each do |item| %>
+		    <tr>
+		        <td>
+		            <%= item.issue_date %>
+		        </td>
+				<td>
+		            <%= item.name %>
+		        </td>
+				<td>
+		            <%= item.dept_name %>
+		        </td>
+				<td>
+		            <%= item.postion_num %>
+		        </td>
+				<td>
+		            <%= item.car_allowance %>
+		        </td>
+				<td>
+		            <%= item.housing_allowance %>
+		        </td>
+				<td>
+		            <%= item.reissue %>
+		        </td>
+				<td>
+		            <%= item.total_num %>
+		        </td>
+				<td>
+		            <%= item.lunion_fee %>
+		        </td>
+				<td>
+		            <%= item.housing_fund %>
+		        </td>
+				<td>
+		            <%= item.unemployment %>
+		        </td>
+				<td>
+		            <%= item.pension %>
+		        </td>
+				<td>
+		            <%= item.basic_medical %>
+		        </td>
+				<td>
+		            <%= item.trivial %>
+		        </td>
+				<td>
+		            <%= item.annunity %>
+		        </td>
+				<td>
+		            <%= item.tax_deduct %>
+		        </td>
+				<td>
+		            <%= item.re_deduct %>
+		        </td>
+				<td>
+		            <%= item.total_deduct %>
+		        </td>
+				<td>
+		            <%= item.final_num %>
+		        </td>
+		        <% end %>
+		    </tr>
+		</table>
+		 
+		<% else%>
+		<p>
+            No Migrated Data Showing 
+        </p>
+        <% end %>
+    </fieldset>
+</div>

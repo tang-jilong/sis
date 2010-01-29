@@ -1,0 +1,383 @@
+body {
+  margin: 0 0;
+  background-color: #dddddd;
+  color: #555;
+  font-family: 'Lucida Grande','Lucida Sans Unicode',Helvetica,Arial,sans-serif;
+}
+h1,h2,h3,h4,h5,h6 {
+  font-weight:900;
+  margin-bottom:20px;
+}
+h2 {
+  color: #083056;
+  font-size:24px;
+}
+h3 {
+  color: #0c457c;
+  font-size:16px;
+}
+p {
+  line-height:1.25em;
+}
+/* clearfix - http://www.webtoolkit.info/css-clearfix.html */
+.clearfix:after {
+  content: ".";
+  display: block;
+  clear: both;
+  visibility: hidden;
+  line-height: 0;
+  height: 0;
+}
+.clearfix {
+  display: inline-block;
+}
+html[xmlns] .clearfix {
+  display: block;
+}
+* html .clearfix {
+  height: 1%;
+}
+/* common elements */
+.hidden {
+  display:none;
+  visibility:hidden;
+}
+.box {
+  background:#eee;
+  border:1px solid #ddd;
+  padding:10px;
+}
+h1.logo {
+  margin:0 0 0 -70px;
+  height:100px;
+}
+a {
+  color:#0f5ba3;
+  text-decoration:underline;
+}
+a:hover {
+  color:#0b3f6f;
+  text-decoration:none;
+}
+
+/* layout */
+#login_content {
+  width:93%;
+  margin-left:180px;
+  background: #dddddd url(/images/bottom.png) bottom left no-repeat;
+  padding:10px 0px 34px 0px;
+  color:#444;
+  font-size:12px;
+  position:relative;
+}
+
+/*
+#content {
+  width:95%;
+  margin-left:60px;
+  background: #dddddd url(/images/bottom.png) bottom left no-repeat;
+  padding:10px 0px 34px 0px;
+  color:#444;
+  font-size:12px;
+  position:relative;
+}
+*/
+div#flash {
+  font-size:10pt;
+  font-weight:bold;
+  padding:15px;
+  text-align:center;
+  width:880px;
+  position:absolute;
+  top:10px;
+  left:10px;
+  display: none;
+  margin-bottom: 10px;
+  background-position:left center;
+  background-repeat:no-repeat;
+}
+div#flash.notice {
+  color:#008800;
+  border: 1px solid #008800;
+  background:#eeffee url(/images/icons/tick_circle.png) 10px center no-repeat;
+  text-align:left;
+  padding-left:40px;
+  display:block;
+}
+div#flash.login_notice {
+  color:#008800;
+  border: 1px solid #008800;
+  background:#eeffee url(/images/icons/tick_circle.png) 10px center no-repeat;
+  text-align:left;
+  padding-left:40px;
+  display:block;
+}
+div#flash.error, div.error {
+  color:#cc0000;
+  border: 1px solid #cc0000;
+  background:#ffeeee url(/images/icons/tick_circle.png) 10px center no-repeat;
+  text-align:left;
+  padding-left:40px;
+  display:block;
+}
+div.error {
+  padding:10px 10px 10px 40px;
+}
+div.error h2 {
+  font-size:13px;
+  font-weight:900;
+  color:#880000;
+}
+.footer {
+  display:block;
+  margin:0 auto 10px;
+  margin-left:400px;
+  text-align:center;
+  overflow:auto;
+  width:600px;
+  font-size:13px;
+  font-family:'Lucida Grande','Lucida Sans Unicode';
+  font-style:inherit;
+  color: #84776B;
+}
+
+/*****
+ * 
+ *  FIELD SET TALBE AND STYLE
+ * 
+ * 
+ * 
+ */
+/* common elements */
+.fieldsets fieldset{
+	margin-left:22px;
+    padding: 5px 67px 30px 90px;
+    color: #000;
+    background-color: #f5fff5;
+    border: solid 2px #9c9;
+    width:56%;
+	height:180px;
+}
+
+.fieldsets_table0 fieldset{
+    padding: 5px 5px 20px 5px;
+    color: #000;
+    background-color: #f5fff5;
+    border: solid 2px #9c9;
+    width:96%;
+	float:left;
+}
+
+.fieldsets_table fieldset{
+	margin-left:20px;
+    padding: 5px 5px 20px 5px;
+    color: #000;
+    background-color: #f5fff5;
+    border: solid 2px #9c9;
+    width:67%;
+	float:left;
+}
+
+.fieldsets_table2 fieldset{
+	margin-left:10px;
+    padding: 5px 5px 0px 5px;
+    color: #000;
+    background-color: #f5fff5;
+    border: solid 2px #9c9;
+    width:28%;
+	float:right;
+}
+
+.data_migrate {
+   margin: 1px 2px;
+  display:block;
+  float:left;
+  border:0px solid #ccc;
+  color:#888;
+  font-size:14px;
+  font-family:'Lucida Grande','Lucida Sans Unicode',Helvetica,Arial,sans-serif;
+}
+
+.data_migrate input {
+  margin: 5px 2px;
+  display:block;
+  float:left;
+  border:1px solid #ccc;
+  color:#888;
+  font-size:14px;
+  font: small-caps 14px/14px "Times New Roman", serif;  
+}
+
+.data_migrate p {
+  margin-top:15px;
+  margin-bottom:5px;
+  text-align:left;
+  line-height:16px;
+  display:inline-block;
+  float:left;
+  width:95px;
+  font: small-caps 14px/14px "Times New Roman", serif;  
+}
+.data_migrate select {
+	margin-top:10px;
+  	margin-bottom:5px;
+}
+fieldset legend {
+ 	color: #9c9 ;
+    background-color: #f5fff5 ;
+    padding: 0.6em 4em;
+    border: solid 1px #9c9; 
+	font: small-caps 14px/14px "Times New Roman", serif;  
+}
+fieldset table tr td{
+	font: small-caps 12px/12px "Times New Roman", serif;  
+	padding: 3px;
+	vertical-align: middle;
+}
+
+
+fieldset label {
+  text-align:right;
+  line-height:16px;
+  display:block;
+  float:left;
+  width:80px;
+  margin:1px 10px 2px 2px;
+  font: small-caps 12px/12px "Times New Roman", serif;  
+}
+
+fieldset span.static_text {
+  line-height:18px;
+}
+fieldset input, fieldset textarea, fieldset select {
+  margin: 1px 2px;
+  display:block;
+  float:left;
+  border:1px solid #ccc;
+  color:#888;
+  font-size:14px;
+  background:#fff url(/images/input-text-bg.png) 0 0 repeat-x;
+  font: small-caps 12px/12px "Times New Roman", serif; 
+}
+fieldset textarea {
+  font-size:12px;
+  line-height:16px;
+  width:184px;
+  height:120px;
+}
+fieldset input:focus, fieldset input.focus, fieldset textarea:focus, fieldset textarea.focus,fieldset select.focus {
+  border:1px solid #222;
+  color:#222;
+  font: small-caps 14px/14px "Times New Roman", serif;  
+}
+fieldset p:after {
+  content:".";
+  display:block;
+  height:0;
+  clear:both;
+  visibility:hidden;
+}
+fieldset p {
+  display:inline-block;
+}
+fieldset p {
+  display:block;
+  min-height:0;
+  margin-bottom:10px;
+  font: small-caps 13px/13px "Times New Roman", serif;  
+}
+fieldset .description {
+  padding-left:90px;
+  font-size:11px;
+  display:block;
+  clear:both;
+  font-style:italic;
+}
+* html .clearfix {
+  height:1px;
+}
+fieldset p.buttons {
+  font: small-caps 13px/13px "Times New Roman", serif;  
+  margin:20px 0 0 92px;
+  line-height: 24px;
+}
+fieldset p.buttons .button {
+  margin-right:5px;
+  padding: 0 5px;
+  font: small-caps 13px/13px "Times New Roman", serif;  
+}
+
+fieldset td.buttons {
+  font: small-caps 13px/13px "Times New Roman", serif;  
+  margin:20px 0 0 92px;
+  line-height: 24px;
+}
+fieldset td.buttons .button {
+  margin-right:5px;
+  padding: 0 5px;
+  font: small-caps 13px/13px "Times New Roman", serif;  
+}
+.button {
+  background:#afbe09 url(/images/button.png) 0 0 repeat-x;
+  line-height:30px;
+  height:24px;
+  border:1px solid #95a208;
+  color:#444;
+  font-size:11px;
+  font-weight:900;
+  text-transform:uppercase;
+}
+
+
+/* tables sorter style */
+table.tablesorter {
+	font-family:arial;
+	background-color: #CDCDCD;
+	margin:10px 0pt 15px;
+	font-size: 8pt;
+	width: 100%;
+	text-align: left;
+	text-decoration: none;
+}
+table.tablesorter thead tr th, table.tablesorter tfoot tr th {
+	background-color: #e6EEEE;
+	border: 1px solid #FFF;
+	font-size: 8pt;
+	padding: 4px;
+	height:30px
+}
+table.tablesorter thead tr .header {
+	background-image: url(/images/bg.gif);
+	background-repeat: no-repeat;
+	background-position: center right;
+	cursor: pointer;
+}
+table.tablesorter tbody td {
+	color: #3D3D3D;
+	padding: 4px;
+	background-color: #FFF;
+	vertical-align: top;
+
+}
+table.tablesorter tbody td a:link {
+	text-decoration: none;
+	   color: #84776B; 
+}
+table.tablesorter tbody td a:hover {
+	    color: #00CC00;
+		text-decoration:  underline;
+}
+table.tablesorter tbody tr.odd td {
+	background-color:#F0F0F6;
+}
+table.tablesorter thead tr .headerSortUp {
+	background-image: url(/images/asc.gif);
+}
+table.tablesorter thead tr .headerSortDown {
+	background-image: url(/images/desc.gif);
+}
+table.tablesorter thead tr .headerSortDown, table.tablesorter thead tr .headerSortUp {
+background-color: #8dbdd8;
+}
+
+

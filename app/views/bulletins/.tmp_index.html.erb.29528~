@@ -1,0 +1,45 @@
+<div class="fieldsets_table0">
+    <fieldset>
+        <legend>
+        	<%= I18n.t('bulletins.index.title')%>
+        </legend>
+	<% if @bulletins!=nil&&@bulletins.size>0%>
+	<table class="tablesorter" cellspacing="1">
+	<thead>
+	  <tr>
+	  	<th><%= I18n.t('bulletins.index.issue_date')%></th>
+	    <th><%= I18n.t('bulletins.index.name')%></th>
+	    <th><%= I18n.t('bulletins.index.author')%></th>
+		 <th><%= I18n.t('application.action')%></th>
+	  </tr>
+	</thead>
+	<tbody>
+	<% @bulletins.each do |bulletin| %>
+	  <tr>
+	  	<td><%=h bulletin.issue_date %></td>
+	    <td><%=h bulletin.title %></td>
+	    <td><%=h bulletin.autor %></td>
+	    <td><%= link_to image_tag("icons/magnifier.png", :alt=>"Show", :title=>"Show"), bulletin %>
+	    <%= link_to image_tag("icons/pencil.png", :alt=>"Edit", :title=>"Edit"), edit_bulletin_path(bulletin) %>
+	    <%= link_to image_tag("icons/cross.png", :alt=>"Remove", :title=>"Remove"), bulletin, :confirm => 'Are you sure?', :method => :delete %></td>
+	  </tr>
+	<% end %>
+	</tbody>
+	</table>
+	<div>
+	<p>
+	<%= will_paginate @bulletins, {:class=>'flickr_pagination'}%>
+	</p>  
+	</div>	
+	<% else %>
+	<%= I18n.t('bulletins.index.no_data')%>
+
+	<% end%>
+		<p class="buttons" align="right">
+		<a><%= link_to I18n.t('bulletins.index.crt'), new_bulletin_path ,:class=>"button"%></a>
+		</p>
+	</fieldset>
+</div>		 
+
+<br />
+

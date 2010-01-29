@@ -1,0 +1,74 @@
+<div class="fieldsets_table">
+    <fieldset>
+        <legend>
+            <%= I18n.t('comparator.addto.title')%> 
+        </legend>
+        <% if @comparable_arry.empty? %><%= I18n.t('comparator.addto.message')%><% else %>
+        <table  class="tablesorter" cellspacing="1">
+        		<thead>
+            <tr>
+                <th>
+                    <%= I18n.t('comparator.addto.username')%> 
+                </th>
+				<th>
+						 <%= I18n.t('comparator.addto.fDate')%> 
+				</th>
+					<th>
+						 <%= I18n.t('comparator.addto.eDate')%> 
+				</th>
+				 <th>
+                   <%= I18n.t('comparator.addto.total_num')%> 
+                </th>
+				 <th>
+                   <%= I18n.t('comparator.addto.total_salary')%> 
+                </th>
+                <th>
+                    <%= I18n.t('comparator.addto.total_bonus')%>
+                </th>
+                
+                <th>
+                    <%= I18n.t('comparator.addto.total_others')%>
+                </th>
+				    <th>
+                    <%= I18n.t('comparator.addto.total')%>
+                </th>
+            </tr>
+				</thead>
+				<tbody>
+            <% @comparable_arry.each do |bon| %>
+            <tr>
+                <td>
+                    <%= bon.sal_name %>
+                </td>
+			<td>
+                    <%= bon.fDate %>
+                </td>
+                <td>
+                    <%= bon.eDate %>
+                </td>
+				<td>
+                    <%= bon.t_num%>
+                </td>
+				<td>
+                    <%= bon.t_salary %>
+                </td>
+                <td>
+                    <%= bon.t_bonus %>
+                </td>
+                <td>
+                    <%= bon.t_others %>
+                </td>
+				 <td>
+                    <%= bon.total %>
+                </td>
+            </tr>
+            <% end %>
+			</tbody>
+        </table>
+        <% end %>
+	  <p class="buttons"   align="right">
+		    <%= link_to I18n.t('application.cancel') , :action=>'index', :class => "button" %>
+		  </p>
+    </fieldset>
+
+</div>

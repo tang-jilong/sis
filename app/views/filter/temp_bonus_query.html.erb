@@ -1,0 +1,110 @@
+<div class="fieldsets_table0">
+    <fieldset>
+        <legend>
+            <%= I18n.t('filter.index.title')%> 
+        </legend>
+        <% if @temp_salary_arry!=nil&&@temp_salary_arry.size>0 %>
+		
+		 <table class="tablesorter" cellspacing="1">
+            <thead>
+		    <tr>
+		    	<th>
+		        	<%= I18n.t('filter.temp.date')%>
+		        </th>
+				<th>
+		        	<%= I18n.t('filter.temp.item')%>
+		        </th>
+				  <th>
+		        	<%= I18n.t('filter.temp.total_num')%>
+		        </th>
+				  <th>
+		        	<%= I18n.t('filter.temp.final_num')%>
+		        </th>
+				  <th>
+		        	<%= I18n.t('filter.temp.operation')%>
+		        </th>
+		    </tr>
+			</thead>
+			<tbody>
+				 <% @temp_salary_arry.each do |item| %>
+		    <tr>
+		    	<% arry=item.data_info.split("|") %>
+		        <td>
+		            <%= arry[0] %>
+		        </td>
+				<td>
+					<%= link_to_remote arry[1], 
+					:url=> {:controller=>'filter',:action => 'show_bonus_detail', :id => item },
+					:html => {:name => 'show_bonus_detail'},
+		            :loading => "Element.show('indicator')",
+		            :complete => "showPopWin('/filter/show_bonus_detail', 800, 200, null, true)",
+		            :update => "bouns_detail_info"	
+					%>
+		        </td>
+				<td>
+		            <%= arry[3] %>
+		        </td>
+				<td>
+		            <%= arry[4] %>
+		        </td>
+				<td>
+					<%= link_to_remote image_tag('icons/magnifier.png', :alt => 'Show', :title=>"Show"), 
+					:url=> {:controller=>'filter',:action => 'show_bonus_detail', :id => item },
+					:html => {:name => 'show_show_bonus_detail'},
+		            :loading => "Element.show('indicator')",
+		            :complete => "showPopWin('/filter/show_bonus_detail', 800, 200, null, true)",
+		            :update => "bouns_detail_info"	
+					%>
+		        </td>
+		        <% end %>
+		    </tr>
+			    
+			</tbody>
+		</table>
+		<div>
+			<p>
+			<%= will_paginate @temp_salary_arry, {:class=>'flickr_pagination'}%>  
+			</p>
+	<table class="tablesorter" cellspacing="1">
+			<thead>
+				<tr>
+					<th>
+						<%= I18n.t('filter.temp.date')%> 
+					</th>
+					<!--
+					<th>
+						 <%= I18n.t('filter.temp.name')%> 
+					</th>
+					-->
+					<th>
+						<%= I18n.t('filter.temp.total_num1')%> 
+					</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>
+						<%= I18n.t('filter.temp.util')%> <%= Time.now.strftime("%Y-%m-%d")%>
+					</td>
+					<!--
+					<td>
+						<%= session[:user_name]%>
+					</td>
+					-->
+					<td>
+						<%= @total_num%>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+			<p class="icons" align="center">
+				<a><%= link_to image_tag("icons/download_icon.png", :alt=>"Download", :title=>"Download"), {:action => 'temp_generate_bonus_excel'}%></a>
+			</p>	
+		</div>
+		<% else %>
+		 <p>
+            <%= I18n.t('filter.index.message')%>  
+        </p>
+        <% end %>
+    </fieldset>
+</div>

@@ -1,0 +1,31 @@
+<div class="fieldsets_table">
+    <fieldset>
+        <legend>
+            List Of Imported Data
+        </legend>
+        <% if @salary_arry!=nil&&@salary_arry.size>0 %>
+		<table class="list">
+		    <tr>
+		        <% @headers.each do |title| %>
+		        <th>
+		            <%= title %>
+		        </th>
+		        <% end %>
+		    </tr>
+		    <% @salary_arry.each do |item| %>
+		    <tr>
+		        <% item.data_info.split("|").each do |data| %>
+		        <td>
+		            <%= data %>
+		        </td>
+		        <% end %>
+		    </tr>
+		    <% end %>
+		</table>
+		<% else %>
+		 <p>
+            No Migrated Data Showing 
+        </p>
+        <% end %>
+    </fieldset>
+</div>

@@ -1,0 +1,40 @@
+<div class="fieldsets_table0">
+    <fieldset>
+        <legend>
+            <%= I18n.t('bulletins.edit.title')%>
+        </legend>
+        <% form_for(@bulletin) do |f| %>
+        <%= f.error_messages %>
+        <table width="100%" cols="2">
+            <tr>
+                <td width="10%">
+                    <%= f.label  I18n.t('bulletins.edit.name') %>
+                </td>
+                <td align="left" width="90%">
+                    <%= f.text_field :title %>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <%= f.label I18n.t('bulletins.edit.issue_date') %>
+                </td>
+                <td>
+                    <input class="wdate" type="text" name="fDate" onclick="SelectDate(this,'yyyy-MM-dd')" value=<%=@fDate%>>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <%= f.label I18n.t('bulletins.edit.content') %>
+                </td>
+                <td>
+                    <%= fckeditor_textarea("bulletin", "content", :toolbarSet => 'Simple', :width => '80%', :height => '500px' ) %>
+                </td>
+            </tr>
+        </table>
+        <p class="buttons">
+            <%= f.submit I18n.t('bulletins.edit.update') ,:class=>"button" %>
+            or <%= link_to I18n.t('bulletins.edit.cancel'), bulletins_path %>
+        </p>
+        <% end %>
+    </fieldset>
+</div>

@@ -1,0 +1,21 @@
+<div class="fieldsets_table2">
+	<% form_for (@role) do |f| %>
+		  <%= f.error_messages %>
+	 <fieldset>
+        <legend>
+             <%= I18n.t('roles.show.title')%> 
+        </legend>
+		  <p>
+		    <%= f.label I18n.t('roles.show.role_name')%>
+		    <%= f.text_field :role_name,:readonly=>true %>
+		  </p>
+		  <p>
+		    <%= f.label I18n.t('roles.show.remark') %>
+		    <%= f.text_area :remark,:readonly=>true %>
+		  </p>
+		  <p class="buttons">
+			<%= f.submit I18n.t('roles.show.button'), :action=>'index', :class => "button" %>
+			</p>
+		<% end %>
+	</fieldset>
+</div>

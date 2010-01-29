@@ -1,0 +1,89 @@
+<div class="fieldsets_table">
+	 <fieldset>
+        <legend>
+            <%= I18n.t('roles.index.title')%>
+        </legend>
+			<% if @roles.empty? %><%= I18n.t('roles.index.message')%><% else %>
+	<table class="tablesorter" cellspacing="1">
+	<thead>
+    <tr>
+        <th>
+            <%= I18n.t('roles.index.role_name')%>
+        </th>
+        <th>
+            <%= I18n.t('roles.index.remark')%>
+        </th>
+        <th class="icons">
+            <%= I18n.t('roles.index.action')%>
+        </th>
+    </tr>
+	</thead>
+	<tbody>
+    <% @roles.each do |role| %>
+    <tr>
+        <td>
+            <%= role.role_name %>
+        </td>
+		<td>
+            <% if role.remark==nil?%>
+			N/A
+			<% else %>
+			<%= role.remark%>	
+			<% end %>		
+        </td>
+        <td class="icons">
+            <a><%= link_to image_tag("icons/magnifier.png", :alt=>"Show", :title=>"Show"), {:action => 'show', :id => role} %></a>
+            <a><%= link_to image_tag("icons/pencil.png", :alt=>"Edit", :title=>"Edit"), {:action => 'edit', :id => role}%></a>
+            <a><%= link_to image_tag("icons/cross.png", :alt=>"Remove", :title=>"Remove"), {:action => 'delete', :id => role},:confirm => 'Are you sure?'%></a>
+        </td>
+    </tr>
+    <% end %>
+</tbody>
+</table>
+<div>
+	<p>
+	<%= will_paginate @roles, {:class=>'flickr_pagination'}%>
+	</p>  
+</div>
+<% end %>		
+</fieldset>
+</div>
+
+<div class="fieldsets_table2">
+	<% form_for :role, :url => { :action => :create } do |f| %>
+	 <fieldset>
+        <legend>
+             <%= I18n.t('roles.index.title1')%>
+        </legend>
+		 <%= f.error_messages %>
+		 <table>			
+		  <tr>
+		  	<td>
+		 
+		    <%= f.label I18n.t('roles.index.role_name') %>
+			</td>
+			<td>
+		    <%= f.text_field :role_name %>
+		  </td>
+		  </tr>
+		  <tr>
+		  	<td>
+		    <%= f.label I18n.t('roles.index.remark') %>
+			</td>
+			<td>
+		    <%= f.text_area :remark %>
+			</td>
+		  </tr>
+		 <tr>
+		 	<td></td>
+			<td class="buttons">
+		    <%= f.submit I18n.t('roles.index.button'), :class => "button" %>
+		  </td>
+		  </tr>
+		   </table>
+		<% end %>
+	</fieldset>
+</div>
+
+
+

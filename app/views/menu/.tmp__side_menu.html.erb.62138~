@@ -1,0 +1,12 @@
+<% if @menu.sidemenu!=nil&&@menu.sidemenu.size!=0 %>
+<div class="sub_menu">
+    <ul id="sub_menu">
+		 <% for submenu in @menu.sidemenu %>
+           <li>
+        	<%= link_to I18n.t(submenu.name), :controller => submenu.flag, :action=>submenu.action%>
+        </li>
+        <% end %>
+    </ul>
+	    <div id="sub_slide"><!-- --></div>
+</div>
+<% end %>

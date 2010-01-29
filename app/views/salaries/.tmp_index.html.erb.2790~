@@ -1,0 +1,102 @@
+<div class="fieldsets_table">
+    <fieldset>
+        <legend>
+            List Of Salary Data
+        </legend>
+		<% if @salaries!=nil&&@salaries.size>0%>
+		<table class="tablesorter" cellspacing="1">
+		<thead>
+  <tr>
+    <th>Issue date</th>
+    <th>Name</th>
+    <th>Dept name</th>
+    <th>Postion num</th>
+    <th>Car allowance</th>
+    <th>Housing allowance</th>
+    <th>Reissue</th>
+    <th>Total num</th>
+    <th>Lunion fee</th>
+    <th>Housing fund</th>
+    <th>Unemployment</th>
+    <th>Pension</th>
+    <th>Basic medical</th>
+    <th>Trivial</th>
+    <th>Annunity</th>
+    <th>Tax deduct</th>
+    <th>Re deduct</th>
+    <th>Total deduct</th>
+    <th>Final num</th>
+    <th>Remark</th>
+  </tr>
+	</thead>
+	<tbody>
+<% @salaries.each do |salary| %>
+  <tr>
+    <td><%=h salary.issue_date %></td>
+    <td><%=h salary.name %></td>
+    <td><%=h salary.dept_name %></td>
+    <td><%=h salary.postion_num %></td>
+    <td><%=h salary.car_allowance %></td>
+    <td><%=h salary.housing_allowance %></td>
+    <td><%=h salary.reissue %></td>
+    <td><%=h salary.total_num %></td>
+    <td><%=h salary.lunion_fee %></td>
+    <td><%=h salary.housing_fund %></td>
+    <td><%=h salary.unemployment %></td>
+    <td><%=h salary.pension %></td>
+    <td><%=h salary.basic_medical %></td>
+    <td><%=h salary.trivial %></td>
+    <td><%=h salary.annunity %></td>
+    <td><%=h salary.tax_deduct %></td>
+    <td><%=h salary.re_deduct %></td>
+    <td><%=h salary.total_deduct %></td>
+    <td><%=h salary.final_num %></td>
+    <td><%=h salary.remark %></td>
+  </tr>
+<% end %>
+</tbody>
+</table>
+		<div>
+			<p>
+			<%= will_paginate @salaries%>  
+			</p>
+			<p class="icons" align="center">
+				<a><%= link_to image_tag("icons/download_icon.png", :alt=>"Download", :title=>"Download"), {:action => 'export_to_excel'}%></a>
+			</p>	
+		</div>
+		<% else %>
+		 <p>
+            No  List Of Salary Data Showing 
+        </p>
+        <% end %>
+	</fieldset>
+</div>		
+
+<div class="fieldsets_table2">
+    <fieldset>
+        <legend>
+            Salary Filter 
+        </legend>
+            <% form_for :salary,@salary,:url => {:action => :index },:html=>{:id=>"salary_filter_form"} do |f| %>
+			<%= f.error_messages %>
+			<table>
+            <tr><td>
+                <%= f.label :fDate, 'From Date' %> 
+				</td>
+				<td>
+				<%= f.text_field :fDate, :html=>{:id=>"fDate", :name=>"fDate"},:onclick=>"SelectDate(this,'yyyy-MM-dd')", :class=>"wdate"%>
+            </td>
+			</tr>
+			 <tr><td>
+                <%= f.label :eDate, 'End Date' %> 
+				</td>
+				<td>
+				<%= f.text_field :eDate, :html=>{:id=>"eDate", :name=>"eDate"},:onclick=>"SelectDate(this,'yyyy-MM-dd')", :class=>"wdate"%>
+            </td></tr>
+			</table>
+			<p class="buttons">
+            <%= f.submit "Search" ,:class => "button" %>
+			</p>
+			<% end %>
+    </fieldset>
+</div>

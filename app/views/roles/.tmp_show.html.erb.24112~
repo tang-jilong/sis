@@ -1,0 +1,21 @@
+<div class="fieldsets_table2">
+	<% form_for (@role) do |f| %>
+		  <%= f.error_messages %>
+	 <fieldset>
+        <legend>
+             Showing User Role 
+        </legend>
+		  <p>
+		    <%= f.label :role_name %>
+		    <%= f.text_field :role_name %>
+		  </p>
+		  <p>
+		    <%= f.label :remark %>
+		    <%= f.text_area :remark %>
+		  </p>
+		  <p class="buttons">
+			<%= f.submit 'Cancel', :action=>'index', :class => "button" %>
+			</p>
+		<% end %>
+	</fieldset>
+</div>

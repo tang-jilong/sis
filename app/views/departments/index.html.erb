@@ -1,0 +1,86 @@
+<div class="fieldsets_table">
+	 <fieldset>
+        <legend>
+            <%= I18n.t('departments.index.title')%> 
+        </legend>
+			<% if @departments.empty? %><%= I18n.t('departments.index.message')%> <% else %>
+	<table class="tablesorter" cellspacing="1">
+	<thead>
+    <tr>
+        <th>
+            <%= I18n.t('departments.index.dept_name')%> 
+        </th>
+        <th>
+            <%= I18n.t('departments.index.remark')%>
+        </th>
+        <th class="icons">
+            <%= I18n.t('departments.index.action')%>
+        </th>
+    </tr>
+	</thead>
+	<tbody>
+    <% @departments.each do |department|%>
+    <tr>
+        <td>
+            <%= department.dept_name %>
+        </td>
+		<td>
+            <% if department.remark==nil?%>
+			N/A
+			<% else %>
+			<%= department.remark%>	
+			<% end %>		
+        </td>
+        <td class="icons">
+            <a><%= link_to image_tag("icons/magnifier.png", :alt=>"Show", :title=>"Show"), {:action => 'show', :id => department} %></a>
+            <a><%= link_to image_tag("icons/pencil.png", :alt=>"Edit", :title=>"Edit"), {:action => 'edit', :id => department}%></a>
+            <a><%= link_to image_tag("icons/cross.png", :alt=>"Remove", :title=>"Remove"), {:action => 'delete', :id => department},:confirm => 'Are you sure?'%></a>
+        </td>
+    </tr>
+    <% end %>
+	</tbody>
+</table>
+<% end %>	
+<div>
+	<p>
+	<%= will_paginate @departments, {:class=>'flickr_pagination'}%>
+	</p>  
+</div>	
+</fieldset>
+</div>
+
+<div class="fieldsets_table2">
+	<% form_for :department, :url => { :action => :create } do |f| %>
+		 
+	 <fieldset>
+        <legend>
+             <%= I18n.t('departments.index.title1')%> 
+        </legend>
+		 <%= f.error_messages %>
+		 <table>
+		 	<tr>
+		  <td>
+		    <%= f.label I18n.t('departments.index.dept_name') %>
+			</td>
+			<td>
+		    <%= f.text_field :dept_name %>
+			</td>
+		  </tr>
+		  <tr>
+		  <td>
+		    <%= f.label I18n.t('departments.index.remark') %>
+			</td>
+			<td>
+		    <%= f.text_area :remark %>
+			</td>
+		  </tr>
+		  <tr>
+		  	<td></td>
+			<td class="buttons">
+				<%= f.submit I18n.t('departments.index.button'), :class => "button" %>	
+			</td>
+		  </tr>
+		  </table>
+		<% end %>
+	</fieldset>
+</div>

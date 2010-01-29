@@ -1,0 +1,43 @@
+<div class="fieldsets_table0">
+    <fieldset>
+        <legend>
+            <%= I18n.t('filter.index.title')%> 
+        </legend>
+        <% if @temp_salary_arry!=nil&&@temp_salary_arry.size>0 %>
+		 <table class="tablesorter" cellspacing="1">
+            <thead>
+		    <tr>
+		        <% @headers.each do |title| %>
+		        <th>
+		            <%= title %>
+		        </th>
+		        <% end %>
+		    </tr>
+			</thead>
+			<tbody>
+		    <% @temp_salary_arry.each do |item| %>
+		    <tr>
+		        <% item.data_info.split("|").each do |data| %>
+		        <td>
+		            <%= data %>
+		        </td>
+		        <% end %>
+		    </tr>
+		    <% end %>
+			</tbody>
+		</table>
+		<div>
+			<p>
+			<%= will_paginate @temp_salary_arry, {:class=>'flickr_pagination'}%>  
+			</p>
+			<p class="icons" align="center">
+				<a><%= link_to image_tag("icons/download_icon.png", :alt=>"Download", :title=>"Download"), {:action => 'temp_generate_others_excel'}%></a>
+			</p>	
+		</div>
+		<% else %>
+		 <p>
+            <%= I18n.t('filter.index.message')%>  
+        </p>
+        <% end %>
+    </fieldset>
+</div>

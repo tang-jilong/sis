@@ -1,0 +1,29 @@
+<div class="fieldsets_table">
+	 <fieldset>
+        <legend>
+            List Of Imported Data
+        </legend>
+		<p>
+			No Data Showing 
+		</p>
+	 </fieldset>	
+</div>
+
+
+<div class="fieldsets_table2">
+    <fieldset>
+        <legend>
+            Data Migration 
+        </legend>
+		<div class="data_migrate">
+	
+        <%= form_tag({:action => 'save'}, :multipart => true) %>
+		<p>
+        Select File 
+		</p>
+		<%= file_field("file", "file") %>
+        <br/>
+        <%= submit_tag("Upload file") %>
+		</div>
+    </fieldset>
+</div>

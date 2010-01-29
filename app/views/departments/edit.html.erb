@@ -1,0 +1,23 @@
+<div class="fieldsets_table2">
+	<% form_for (@department) do |f| %>
+		  
+	 <fieldset>
+        <legend>
+             <%= I18n.t('departments.edit.title')%> 
+        </legend>
+		<%= f.error_messages %>
+		  <p>
+		    <%= f.label I18n.t('departments.edit.dept_name')%>
+		    <%= f.text_field :dept_name %>
+		  </p>
+		  <p>
+		    <%= f.label I18n.t('departments.edit.remark')%>
+		    <%= f.text_area :remark %>
+		  </p>
+		  <p class="buttons">
+		    <%= f.submit I18n.t('departments.edit.button1'), :class => "button" %>
+			or <%= link_to I18n.t('departments.edit.button2'), departments_path %>
+		  </p>
+		<% end %>
+	</fieldset>
+</div>

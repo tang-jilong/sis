@@ -22,7 +22,7 @@ Rails::Initializer.run do |config|
   # config.gem "aws-s3", :lib => "aws/s3"
   config.gem "fastercsv", :lib => "faster_csv"
   config.gem "openrain-action_mailer_tls", :lib => "smtp_tls.rb"
-  #config.gem 'gruff', :lib => 'gruff'
+  config.gem 'gruff', :lib => 'gruff'
   
   # Only load the plugins named here, in the order given (default is alphabetical).
   # :all can be used as a placeholder for all plugins not explicitly named
